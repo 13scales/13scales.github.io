@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Political Quiz</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="sticky-bar">
+    <span>13 Scales</span>
+  </div>
+
+<div class="quiz-container">
+    <form method="POST" action="/results">
+      {% set ns = namespace(i=0) %}
+      {% for category, qs in questions.items() %}
+        <section class="category-section">
+          <h1 class="category-heading">{{ category }}</h1>
+          {% for q in qs %}
+            <div class="question-card">
+              <p class="question-text">{{ ns.i + 1 }}. {{ q[2] }}</p>
+              <div class="slider-wrapper">
+                <input
+                  type="range"
+                  name="#{{ ns.i }}"
+                  id="#{{ ns.i }}"
+                  min="-1"
+                  max="1"
+                  step="0.01"
+                  value="0"
+                >
+                <div class="slider-labels">
+                  <span>Strongly Disagree</span>
+                  <span>Disagree</span>
+                  <span>Neutral</span>
+                  <span>Agree</span>
+                  <span>Strongly Agree</span>
+                </div>
+              </div>
+            </div>
+            {% set ns.i = ns.i + 1 %}
+          {% endfor %}
+        </section>
+      {% endfor %}
+
+      <div class="submit-row">
+        <button type="submit" class="btn-submit">See My Results</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
