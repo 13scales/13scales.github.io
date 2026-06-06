@@ -6,3 +6,33 @@
   <title>Your Results</title>
   <link rel="stylesheet" href="/static/style.css">
 </head>
+<body>
+  <div class="results-container">
+    <h1 class="results-title">You support:</h1>
+
+    {% for scale in scales %}
+    <div class="axis-result">
+      <div class="axis-label">{{ scale.label }}</div>
+      <div class="bar-track">
+        <div class="bar-left" data-w="{{ scale['1st%'] }}" data-color="{{ colors[loop.index0][0] }}">
+          <span class="bar-inner-text">{{ scale['1st'] }} {{ scale['1st%'] }}%</span>
+        </div>
+        <div class="bar-right" data-w="{{ scale['2nd%'] }}" data-color="{{ colors[loop.index0][1] }}">
+          <span class="bar-inner-text">{{ scale['2nd'] }} {{ scale['2nd%'] }}%</span>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="retake-row">
+      <a href="/quiz" class="btn-start">Retake Quiz</a>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('[data-w]').forEach(el => {
+      el.style.width = el.dataset.w + '%';
+      if (el.dataset.color) el.style.backgroundColor = el.dataset.color;
+    });
+  </script>
+</body>
+</html>

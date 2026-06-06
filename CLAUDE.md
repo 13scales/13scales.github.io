@@ -1,5 +1,5 @@
 # CLAUDE.md
-Note that this is from https://github.com/multica-ai/andrej-karpathy-skills/tree/main 
+Note that this is extremely similar to https://github.com/multica-ai/andrej-karpathy-skills/tree/main 
 
 Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
 **Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
@@ -23,6 +23,8 @@ Before implementing:
 - No "flexibility" or "configurability" that wasn't requested.
 - No error handling for impossible scenarios.
 - If you write 200 lines, and it could be 50, then rewrite it.
+- Don't rewrite code for style, even if you dislike it.
+- Pre-existing and fully-functional code should be left alone. New code should adapt to it.
 
 Ask yourself: "Would a senior engineer say this is overcomplicated?" If yes, simplify.
 

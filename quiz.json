@@ -3,82 +3,108 @@
     "Populism vs Establishmentarianism": {
       "Highly educated people are out of touch with the concerns of ordinary people.": -0.5,
       "There is a correlation between education level and intelligence.": 0.5,
-      "Experts in a field shouldn’t have more of a say than ordinary people.": -0.5,
+      "Experts in a field shouldn't have more of a say than ordinary people.": -0.5,
       "Higher education is used as a tool by elites to maintain power.": -1,
-      "People without college degrees don’t know what's best for them.": 1
+      "People without college degrees are less equipped to make political decisions.": 1,
+      "color1": "#00CC00",
+      "color2": "#E67E22"
     },
     "Equality vs Hierarchy": {
       "The rich should share their wealth with everyone else.": -0.5,
       "The burden of taxation should mainly be on the rich.": -0.5,
       "My nation should be free of class divisions.": -1,
-      "There should be more class divisions than there are now.": 1,
-      "Boosting economic growth is more important than reducing inequality.": 0.5
+      "Economic classes are natural and should be preserved.": 1,
+      "Boosting economic growth is more important than reducing inequality.": 0.5,
+      "color1": "#FF0000",
+      "color2": "#0000FF"
     },
-    "Protection vs Free Trade": {
+    "Protection vs Free-Trade": {
       "The federal government should rarely implement tariffs.": 0.5,
       "Domestic production should be prioritized over trade.": -0.5,
       "Tariffs are the most preferable form of taxation.": -1,
-      "If workers don’t want to lose their jobs to offshoring, they should just work harder.": 1,
-      "Higher prices are sometimes worth it to prevent offshoring.": -0.5
+      "Offshoring is a good thing because it makes people work harder.": 1,
+      "Higher prices are sometimes worth it to prevent offshoring.": -0.5,
+      "color1": "#7EA6D8",
+      "color2": "#2F5D2F"
     },
-    "Intervention vs Laissez-Faire": {
+    "Intervention vs Laissez-Faire Economics": {
       "The federal government should fund infrastructure projects.": -0.5,
       "The federal government should fund education.": -0.5,
       "The federal government should help sectors of the economy in times of crisis.": -0.5,
       "Massive increases in government spending are acceptable.": -1,
-      "Even in an economic depression, the government should spend little.": 1
+      "Even in an economic depression, the government should spend little.": 1,
+      "color1": "#A00000",
+      "color2": "#F1C40F"
     }
   },
   "Social Issues": {
-    "Social Justice vs Traditional Values": {
+    "Progressivism vs Conservatism": {
       "My nation does not need to strongly address discrimination further.": 0.5,
       "Employers should make the workforce as diverse as possible.": -0.5,
       "Power in society should be radically redistributed towards historically discriminated groups.": -1,
-      "Historic racial systems shouldn’t have been abandoned.": 1
+      "Discrimination isn't an issue at all in my nation.": 1,
+      "color1": "#FF00FF",
+      "color2": "#4A7BD0"
     },
     "Rehabilitation vs Punishment": {
       "There needs to be more police reform.": -0.5,
       "The criminal justice system is fundamentally fair.": 0.5,
       "The police need to be defunded.": -1,
-      "Systems of punishment now considered archaic should be brought back.": 1
+      "Torture is acceptable in many circumstances.": 1,
+      "color1": "#40E0D0",
+      "color2": "#F39C12"
     },
-    "Acceptance vs Restriction": {
-      "My nation has a distinct culture and that culture should remain predominant.": 0.5,
+    "Multiculturalism vs Nativism": {
+      "My nation's culture should remain predominant.": 0.5,
       "A pathway to citizenship should be given for undocumented immigrants.": -0.5,
       "Immigrants that are undocumented deserve the same rights as born citizens.": -1,
-      "Only immigrants with the same physical traits as most people in my nation should be accepted.": 1
+      "My nation needs to stop immigration for some time.": 1,
+      "color1": "#FF7FBF",
+      "color2": "#555555"
     },
     "Liberty vs Morality": {
       "Using drugs recreationally is acceptable behavior.": -0.5,
       "Sexual exclusivity in marriages is oppressive.": -1,
-      "Premarital sex should be punished with prison sentences.": 1
+      "Premarital sex should be cracked down on.": 1,
+      "color1": "#FFD54F",
+      "color2": "#2E7D32"
     },
-    "Secularism vs Theocracy": {
-      "The most common religion in my nation should be promoted.": 0.5,
-      "My nation should not have people who don’t follow the most common religion.": 1,
-      "No religions are unworthy of respect, even former ones now deemed archaic.": -1
+    "Secularism vs Religiousness": {
+      "The most common religion in my nation should have more relevance.": 0.5,
+      "Religious diversity is responsible for societal decline.": 1,
+      "No religions are unworthy of respect, even former ones now deemed archaic.": -1,
+      "color1": "#E67E22",
+      "color2": "#6A1B9A"
     },
-    "Wokeism vs Anti-Wokeism": {
+    "Critical Patriotism vs Loyal Patriotism": {
       "Schools should have a curriculum that makes students think more highly of America.": 0.5,
       "Schools should avoid teaching anything that might make students think negatively about America.": 1,
-      "Schools should promote teaching social justice over teaching subjects like Math.": -1
+      "Schools should promote teaching social justice over teaching subjects like math.": -1,
+      "color1": "#6D1B1B",
+      "color2": "#1F4E79"
     },
-    "Federal vs States": {
+    "Centralism vs Confederalism": {
       "More government power should go to states/provinces than the federal government.": 0.5,
       "States should be allowed to secede.": 1,
-      "States should not exist.": -1
+      "States should not exist.": -1,
+      "color1": "#D32F2F",
+      "color2": "#8D6E00"
     }
   },
   "Foreign Policy": {
-    "Human Rights vs National Interest": {
+    "Humanitarianism vs Productivism": {
       "International human rights are more important than strategic interests.": -0.5,
       "My nation should only cooperate with nations that have clean human rights records.": -1,
-      "Human rights should play absolutely no role in determining what countries to interact with.": 1
+      "Economic interests are worth compromising on some human rights.": 1,
+      "color1": "#E6A5B8",
+      "color2": "#F4A261"
     },
-    "Pacifism vs Militarism": {
-      "My nation should reduce military spending.": -0.5,
-      "My nation should not have a military.": -1,
-      "My nation should use the most dangerous weapons at its disposal more.": 1
+    "Militarism vs Pacifism": {
+      "My nation should reduce military spending.": 0.5,
+      "My nation should not have a military.": 1,
+      "My nation should use the most dangerous weapons at its disposal more.": -1,
+      "color1": "#2E7D32",
+      "color2": "#F2C6CF"
     }
   }
 }

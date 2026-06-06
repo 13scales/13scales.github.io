@@ -203,10 +203,10 @@ input[type="range"]::-moz-range-thumb {
   transform: translateX(-50%);
 }
 
-.slider-labels span:nth-child(1) { left: 0;   transform: translateX(0); }
-.slider-labels span:nth-child(2) { left: 25%;  }
-.slider-labels span:nth-child(3) { left: 50%;  }
-.slider-labels span:nth-child(4) { left: 75%;  }
+.slider-labels span:nth-child(1) { left: 0%;   transform: translateX(0); }
+.slider-labels span:nth-child(2) { left: calc(25% + 4.5px); }
+.slider-labels span:nth-child(3) { left: 50%;               }
+.slider-labels span:nth-child(4) { left: calc(75% - 4.5px); }
 .slider-labels span:nth-child(5) { left: 100%; transform: translateX(-100%); }
 
 .slider-value {
@@ -234,63 +234,32 @@ input[type="range"]::-moz-range-thumb {
   padding: 2rem 1.5rem 4rem;
 }
 
-.results-container > h1 {
-  font-size: 1.75rem;
+.results-title {
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.results-subtitle {
-  color: var(--muted);
-  font-size: 0.9rem;
-  margin-bottom: 2rem;
-}
-
-.result-category {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.75rem;
+  text-align: center;
 }
 
 .axis-result {
   background: var(--card);
   border-radius: var(--radius);
   box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-  padding: 1rem 1.25rem;
-  margin-bottom: 0.75rem;
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 1rem;
 }
 
-.axis-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 0.5rem;
-  gap: 0.5rem;
-}
-
-.label-left {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--blue);
-  flex: 1;
-}
-
-.label-right {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--red);
-  flex: 1;
-  text-align: right;
-}
-
-.axis-score {
-  font-size: 0.8rem;
-  color: var(--muted);
-  white-space: nowrap;
+.axis-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.55rem;
 }
 
 .bar-track {
   display: flex;
-  height: 22px;
-  border-radius: 11px;
+  height: 48px;
+  border-radius: 10px;
   overflow: hidden;
   background: var(--border);
 }
@@ -298,13 +267,31 @@ input[type="range"]::-moz-range-thumb {
 .bar-left {
   background: var(--blue);
   height: 100%;
-  transition: width 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: width 0.5s ease;
+  border-right: 4px solid #fff;
 }
 
 .bar-right {
   background: var(--red);
   height: 100%;
-  transition: width 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: width 0.5s ease;
+}
+
+.bar-inner-text {
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 0 0.5rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.25);
 }
 
 .retake-row {
