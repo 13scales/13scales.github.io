@@ -39,3 +39,4 @@ htmlcov/
 instance/
 .webassets-cache
 flask_session/
+.claude/

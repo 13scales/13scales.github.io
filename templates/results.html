@@ -141,14 +141,14 @@
     <div class="axis-result">
       <div class="axis-label">{{ scale.label }}</div>
       <div class="bar-with-icons">
-        <img class="scale-icon" src="/assets/{{ scale['1st'] | lower | replace(' ', '-') }}.png" alt="{{ scale['1st'] }}">
+        <img class="scale-icon" src="{{ url_for('serve_assets', filename=(scale['1st'] | lower | replace(' ', '-')) ~ '.png') }}" alt="{{ scale['1st'] }}">
         <div class="bar-track">
           <div class="bar-left" data-w="{{ scale['1st%'] }}" data-color="{{ colors[loop.index0][0] }}"></div>
           <div class="bar-right" data-w="{{ scale['2nd%'] }}" data-color="{{ colors[loop.index0][1] }}"></div>
           {% if scale['1st%'] >= 7 %}<span class="bar-pct pct-left">{{scale['1st%']}}%</span>{% endif %}
           {% if scale['2nd%'] >= 7 %}<span class="bar-pct pct-right">{{scale['2nd%']}}%</span>{% endif %}
         </div>
-        <img class="scale-icon" src="/assets/{{ scale['2nd'] | lower | replace(' ', '-') }}.png" alt="{{ scale['2nd'] }}">
+        <img class="scale-icon" src="{{ url_for('serve_assets', filename=(scale['2nd'] | lower | replace(' ', '-')) ~ '.png') }}" alt="{{ scale['2nd'] }}">
       </div>
     </div>
     {% endfor %}
@@ -170,6 +170,66 @@
       svg.querySelector('.plane-dot').setAttribute('cx', cx);
       svg.querySelector('.plane-dot').setAttribute('cy', cy);
     });
+  </script>
+
+  <!-- Static-site layer: the frozen page is baked at 50/50 defaults, so re-render from URL params -->
+  <div id="scale-order" data-value='{{ scale_order | tojson }}' hidden></div>
+  <script>
+    const scaleOrder = JSON.parse(document.getElementById('scale-order').dataset.value);
+    const params = new URLSearchParams(window.location.search);
+
+    const axisResults = document.querySelectorAll('.axis-result');
+    const planeSvgs = document.querySelectorAll('.plane-svg');
+    let row = 0, plane = 0;
+
+    for (const [category, axes] of Object.entries(scaleOrder)) {
+      let hSum = 0, hCount = 0, vSum = 0, vCount = 0;
+
+      axes.forEach(([axis, dimension], index) => {
+        const first = parseInt(params.get(category[0] + index) || '50');
+        const second = 100 - first;
+        const difference = Math.abs(first - second);
+        const [firstIdeology, secondIdeology] = axis.split(' vs ');
+
+        let label;
+        if (difference === 0) {
+          label = `As much ${firstIdeology} as ${secondIdeology}`;
+        } else {
+          const intensity = difference < 15 ? 'Slight' : difference < 40 ? 'Moderate' : difference < 70 ? 'Strong' : 'Extreme';
+          label = `${intensity} ${first > second ? firstIdeology : secondIdeology}`;
+        }
+
+        const result = axisResults[row++];
+        result.querySelector('.axis-label').textContent = label;
+        const barLeft = result.querySelector('.bar-left');
+        barLeft.style.width = first + '%';
+        barLeft.style.borderRight = (first === 0 || first === 100) ? 'none' : '';
+        result.querySelector('.bar-right').style.width = second + '%';
+
+        const pctLeft = result.querySelector('.pct-left');
+        const pctRight = result.querySelector('.pct-right');
+        if (pctLeft) {
+          pctLeft.textContent = first + '%';
+          pctLeft.style.display = first >= 7 ? '' : 'none';
+        }
+        if (pctRight) {
+          pctRight.textContent = second + '%';
+          pctRight.style.display = second >= 7 ? '' : 'none';
+        }
+
+        if (dimension === 0) {
+          hSum += second * 0.02 - 1;
+          hCount++;
+        } else if (dimension === 1) {
+          vSum += first * 0.02 - 1;
+          vCount++;
+        }
+      });
+
+      const dot = planeSvgs[plane++].querySelector('.plane-dot');
+      dot.setAttribute('cx', (hSum / hCount + 1) / 2 * 180);
+      dot.setAttribute('cy', (1 - vSum / vCount) / 2 * 180);
+    }
   </script>
 </body>
 </html>

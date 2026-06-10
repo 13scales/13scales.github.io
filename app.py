@@ -1,31 +1,10 @@
 import json
 import random
-from typing import Annotated
 from collections import defaultdict
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
-
-type Scale = Annotated[int, "[-1, 1]"]
-
-def get_view(bias: Scale, response: Scale) -> Scale:
-    if bias < 0: # left/up-leaning question
-        if response == 0: # Neutral
-            return bias + 0.5
-
-        elif response > 0: # Agree
-            return bias + 0.5 - response * (bias + 1.5)
-
-        return bias + 0.5 - response * (0.5 - bias) # Disagree
-
-    # right/down-leaning question
-    if response == 0: # Neutral
-        return bias - 0.5
-
-    elif response > 0: # Agree
-        return bias - 0.5 + response * (1.5 - bias)
-
-    return bias - 0.5 + response * (bias + 0.5) # Disagree
+from flask import Flask, render_template, request, send_from_directory
 
 app = Flask(__name__)
+app.jinja_env.policies["json.dumps_kwargs"] = {"sort_keys": False}
 
 questions_categorized = defaultdict(list)
 scale_order = defaultdict(list)
@@ -50,30 +29,14 @@ def serve_assets(filename):
 def index():
     return render_template("index.html")
 
-@app.route("/quiz")
+@app.route("/quiz/")
 def quiz():
     for category in questions_categorized:
         random.shuffle(questions_categorized[category])
 
-    return render_template("quiz.html", questions=questions_categorized)
+    return render_template("quiz.html", questions=questions_categorized, scale_order=scale_order)
 
-@app.route("/results", methods=["POST"])
-def results_post():
-    axis_views = defaultdict(lambda: defaultdict(lambda: [0, 0]))
-
-    for question in range(50):
-        category, axis = request.form[f"#{question}.category"], request.form[f"#{question}.axis"]
-        bias, response = float(request.form.get(f"#{question}.bias", 0)), float(request.form.get(f"#{question}.response", 0))
-
-        axis_views[category][axis][0] += get_view(bias, response)
-        axis_views[category][axis][1] += 1
-
-    parameters = {f"{category[0]}{index}": ((1 - axis_views[category][axis][0] / axis_views[category][axis][1]) * 50 + 0.5) // 1
-                  for category, axes in scale_order.items() for index, (axis, _) in enumerate(axes)}
-
-    return redirect(url_for("results", **parameters))
-
-@app.route("/results")
+@app.route("/results/")
 def results():
     scales = []
     coordinates = []
@@ -110,7 +73,7 @@ def results():
 
         coordinates.append({"category": category, "x": horizontal_sum / horizontal_count, "y": vertical_sum / vertical_count})
 
-    return render_template("results.html", scales=scales, colors=colors, planes=coordinates)
+    return render_template("results.html", scales=scales, colors=colors, planes=coordinates, scale_order=scale_order)
 
 if __name__ == "__main__":
    app.run(debug=True)
