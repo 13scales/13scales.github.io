@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Political Quiz</title>
-    <link rel="stylesheet" href="../static/style.css" />
+    <link
+      rel="stylesheet"
+      href="../static/style.css"
+    />
   </head>
   <body>
     <div class="sticky-bar">
@@ -13,23 +16,33 @@
 
     <div class="quiz-container">
       <form id="quiz-form">
+         
         <section class="category-section">
           <h1 class="category-heading">Economic Issues</h1>
-
+          
           <div class="question-card">
-            <p class="question-text">
-              1. Boosting economic growth is more important than reducing
-              inequality.
-            </p>
-            <input type="hidden" name="#0.bias" value="0.5" />
-            <input type="hidden" name="#0.axis" value="Equality vs Hierarchy" />
-            <input type="hidden" name="#0.category" value="Economic Issues" />
+            <p class="question-text">1. There is a correlation between education level and intelligence.</p>
+            <input
+              type="hidden"
+              name="#0.bias"
+              value="0.5"
+            />
+            <input
+              type="hidden"
+              name="#0.axis"
+              value="Populism vs Establishmentarianism"
+            />
+            <input
+              type="hidden"
+              name="#0.category"
+              value="Economic Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#0.response"
                 id="#0.response"
-                aria-label="Boosting economic growth is more important than reducing inequality."
+                aria-label="There is a correlation between education level and intelligence."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -44,25 +57,30 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              2. Even in an economic depression, the government should spend
-              little.
-            </p>
-            <input type="hidden" name="#1.bias" value="1" />
+            <p class="question-text">2. Economic classes are natural and should be preserved.</p>
+            <input
+              type="hidden"
+              name="#1.bias"
+              value="1"
+            />
             <input
               type="hidden"
               name="#1.axis"
-              value="Intervention vs Laissez-Faire Economics"
+              value="Equality vs Hierarchy"
             />
-            <input type="hidden" name="#1.category" value="Economic Issues" />
+            <input
+              type="hidden"
+              name="#1.category"
+              value="Economic Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#1.response"
                 id="#1.response"
-                aria-label="Even in an economic depression, the government should spend little."
+                aria-label="Economic classes are natural and should be preserved."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -77,14 +95,24 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              3. The rich should share their wealth with everyone else.
-            </p>
-            <input type="hidden" name="#2.bias" value="-0.5" />
-            <input type="hidden" name="#2.axis" value="Equality vs Hierarchy" />
-            <input type="hidden" name="#2.category" value="Economic Issues" />
+            <p class="question-text">3. The rich should share their wealth with everyone else.</p>
+            <input
+              type="hidden"
+              name="#2.bias"
+              value="-0.5"
+            />
+            <input
+              type="hidden"
+              name="#2.axis"
+              value="Equality vs Hierarchy"
+            />
+            <input
+              type="hidden"
+              name="#2.category"
+              value="Economic Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
@@ -105,25 +133,30 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              4. The federal government should help sectors of the economy in
-              times of crisis.
-            </p>
-            <input type="hidden" name="#3.bias" value="-0.5" />
+            <p class="question-text">4. Even in an economic depression, the government should spend little.</p>
+            <input
+              type="hidden"
+              name="#3.bias"
+              value="1"
+            />
             <input
               type="hidden"
               name="#3.axis"
               value="Intervention vs Laissez-Faire Economics"
             />
-            <input type="hidden" name="#3.category" value="Economic Issues" />
+            <input
+              type="hidden"
+              name="#3.category"
+              value="Economic Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#3.response"
                 id="#3.response"
-                aria-label="The federal government should help sectors of the economy in times of crisis."
+                aria-label="Even in an economic depression, the government should spend little."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -138,111 +171,29 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              5. Tariffs are the most preferable form of taxation.
-            </p>
-            <input type="hidden" name="#4.bias" value="-1" />
+            <p class="question-text">5. The federal government should fund infrastructure projects.</p>
+            <input
+              type="hidden"
+              name="#4.bias"
+              value="-0.5"
+            />
             <input
               type="hidden"
               name="#4.axis"
-              value="Protection vs Free-Trade"
+              value="Intervention vs Laissez-Faire Economics"
             />
-            <input type="hidden" name="#4.category" value="Economic Issues" />
+            <input
+              type="hidden"
+              name="#4.category"
+              value="Economic Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#4.response"
                 id="#4.response"
-                aria-label="Tariffs are the most preferable form of taxation."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">
-              6. The burden of taxation should mainly be on the rich.
-            </p>
-            <input type="hidden" name="#5.bias" value="-0.5" />
-            <input type="hidden" name="#5.axis" value="Equality vs Hierarchy" />
-            <input type="hidden" name="#5.category" value="Economic Issues" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#5.response"
-                id="#5.response"
-                aria-label="The burden of taxation should mainly be on the rich."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">
-              7. Economic classes are natural and should be preserved.
-            </p>
-            <input type="hidden" name="#6.bias" value="1" />
-            <input type="hidden" name="#6.axis" value="Equality vs Hierarchy" />
-            <input type="hidden" name="#6.category" value="Economic Issues" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#6.response"
-                id="#6.response"
-                aria-label="Economic classes are natural and should be preserved."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">
-              8. The federal government should fund infrastructure projects.
-            </p>
-            <input type="hidden" name="#7.bias" value="-0.5" />
-            <input
-              type="hidden"
-              name="#7.axis"
-              value="Intervention vs Laissez-Faire Economics"
-            />
-            <input type="hidden" name="#7.category" value="Economic Issues" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#7.response"
-                id="#7.response"
                 aria-label="The federal government should fund infrastructure projects."
                 min="-1"
                 max="1"
@@ -258,24 +209,29 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              9. Highly educated people are out of touch with the concerns of
-              ordinary people.
-            </p>
-            <input type="hidden" name="#8.bias" value="-0.5" />
+            <p class="question-text">6. Highly educated people are out of touch with the concerns of ordinary people.</p>
             <input
               type="hidden"
-              name="#8.axis"
+              name="#5.bias"
+              value="-0.5"
+            />
+            <input
+              type="hidden"
+              name="#5.axis"
               value="Populism vs Establishmentarianism"
             />
-            <input type="hidden" name="#8.category" value="Economic Issues" />
+            <input
+              type="hidden"
+              name="#5.category"
+              value="Economic Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
-                name="#8.response"
-                id="#8.response"
+                name="#5.response"
+                id="#5.response"
                 aria-label="Highly educated people are out of touch with the concerns of ordinary people."
                 min="-1"
                 max="1"
@@ -291,88 +247,105 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              10. The federal government should rarely implement tariffs.
-            </p>
-            <input type="hidden" name="#9.bias" value="0.5" />
+            <p class="question-text">7. People without college degrees are less equipped to make political decisions.</p>
             <input
               type="hidden"
-              name="#9.axis"
-              value="Protection vs Free-Trade"
+              name="#6.bias"
+              value="1"
             />
-            <input type="hidden" name="#9.category" value="Economic Issues" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#9.response"
-                id="#9.response"
-                aria-label="The federal government should rarely implement tariffs."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">
-              11. Massive increases in government spending are acceptable.
-            </p>
-            <input type="hidden" name="#10.bias" value="-1" />
             <input
               type="hidden"
-              name="#10.axis"
-              value="Intervention vs Laissez-Faire Economics"
-            />
-            <input type="hidden" name="#10.category" value="Economic Issues" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#10.response"
-                id="#10.response"
-                aria-label="Massive increases in government spending are acceptable."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">
-              12. Experts in a field shouldn&#39;t have more of a say than
-              ordinary people.
-            </p>
-            <input type="hidden" name="#11.bias" value="-0.5" />
-            <input
-              type="hidden"
-              name="#11.axis"
+              name="#6.axis"
               value="Populism vs Establishmentarianism"
             />
-            <input type="hidden" name="#11.category" value="Economic Issues" />
+            <input
+              type="hidden"
+              name="#6.category"
+              value="Economic Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
-                name="#11.response"
-                id="#11.response"
+                name="#6.response"
+                id="#6.response"
+                aria-label="People without college degrees are less equipped to make political decisions."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
+          <div class="question-card">
+            <p class="question-text">8. My nation should be free of class divisions.</p>
+            <input
+              type="hidden"
+              name="#7.bias"
+              value="-1"
+            />
+            <input
+              type="hidden"
+              name="#7.axis"
+              value="Equality vs Hierarchy"
+            />
+            <input
+              type="hidden"
+              name="#7.category"
+              value="Economic Issues"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#7.response"
+                id="#7.response"
+                aria-label="My nation should be free of class divisions."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
+          <div class="question-card">
+            <p class="question-text">9. Experts in a field shouldn&#39;t have more of a say than ordinary people.</p>
+            <input
+              type="hidden"
+              name="#8.bias"
+              value="-0.5"
+            />
+            <input
+              type="hidden"
+              name="#8.axis"
+              value="Populism vs Establishmentarianism"
+            />
+            <input
+              type="hidden"
+              name="#8.category"
+              value="Economic Issues"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#8.response"
+                id="#8.response"
                 aria-label="Experts in a field shouldn&#39;t have more of a say than ordinary people."
                 min="-1"
                 max="1"
@@ -388,24 +361,181 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              13. Offshoring is a good thing because it makes people work
-              harder.
-            </p>
-            <input type="hidden" name="#12.bias" value="1" />
+            <p class="question-text">10. The federal government should fund education.</p>
+            <input
+              type="hidden"
+              name="#9.bias"
+              value="-0.5"
+            />
+            <input
+              type="hidden"
+              name="#9.axis"
+              value="Intervention vs Laissez-Faire Economics"
+            />
+            <input
+              type="hidden"
+              name="#9.category"
+              value="Economic Issues"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#9.response"
+                id="#9.response"
+                aria-label="The federal government should fund education."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
+          <div class="question-card">
+            <p class="question-text">11. The burden of taxation should mainly be on the rich.</p>
+            <input
+              type="hidden"
+              name="#10.bias"
+              value="-0.5"
+            />
+            <input
+              type="hidden"
+              name="#10.axis"
+              value="Equality vs Hierarchy"
+            />
+            <input
+              type="hidden"
+              name="#10.category"
+              value="Economic Issues"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#10.response"
+                id="#10.response"
+                aria-label="The burden of taxation should mainly be on the rich."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
+          <div class="question-card">
+            <p class="question-text">12. Tariffs are the most preferable form of taxation.</p>
+            <input
+              type="hidden"
+              name="#11.bias"
+              value="-1"
+            />
+            <input
+              type="hidden"
+              name="#11.axis"
+              value="Protection vs Free-Trade"
+            />
+            <input
+              type="hidden"
+              name="#11.category"
+              value="Economic Issues"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#11.response"
+                id="#11.response"
+                aria-label="Tariffs are the most preferable form of taxation."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
+          <div class="question-card">
+            <p class="question-text">13. Boosting economic growth is more important than reducing inequality.</p>
+            <input
+              type="hidden"
+              name="#12.bias"
+              value="0.5"
+            />
             <input
               type="hidden"
               name="#12.axis"
-              value="Protection vs Free-Trade"
+              value="Equality vs Hierarchy"
             />
-            <input type="hidden" name="#12.category" value="Economic Issues" />
+            <input
+              type="hidden"
+              name="#12.category"
+              value="Economic Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#12.response"
                 id="#12.response"
+                aria-label="Boosting economic growth is more important than reducing inequality."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
+          <div class="question-card">
+            <p class="question-text">14. Offshoring is a good thing because it makes people work harder.</p>
+            <input
+              type="hidden"
+              name="#13.bias"
+              value="1"
+            />
+            <input
+              type="hidden"
+              name="#13.axis"
+              value="Protection vs Free-Trade"
+            />
+            <input
+              type="hidden"
+              name="#13.category"
+              value="Economic Issues"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#13.response"
+                id="#13.response"
                 aria-label="Offshoring is a good thing because it makes people work harder."
                 min="-1"
                 max="1"
@@ -421,50 +551,24 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              14. Domestic production should be prioritized over trade.
-            </p>
-            <input type="hidden" name="#13.bias" value="-0.5" />
+            <p class="question-text">15. Higher prices are sometimes worth it to prevent offshoring.</p>
             <input
               type="hidden"
-              name="#13.axis"
-              value="Protection vs Free-Trade"
+              name="#14.bias"
+              value="-0.5"
             />
-            <input type="hidden" name="#13.category" value="Economic Issues" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#13.response"
-                id="#13.response"
-                aria-label="Domestic production should be prioritized over trade."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">
-              15. Higher prices are sometimes worth it to prevent offshoring.
-            </p>
-            <input type="hidden" name="#14.bias" value="-0.5" />
             <input
               type="hidden"
               name="#14.axis"
               value="Protection vs Free-Trade"
             />
-            <input type="hidden" name="#14.category" value="Economic Issues" />
+            <input
+              type="hidden"
+              name="#14.category"
+              value="Economic Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
@@ -485,25 +589,30 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              16. There is a correlation between education level and
-              intelligence.
-            </p>
-            <input type="hidden" name="#15.bias" value="0.5" />
+            <p class="question-text">16. The federal government should rarely implement tariffs.</p>
+            <input
+              type="hidden"
+              name="#15.bias"
+              value="0.5"
+            />
             <input
               type="hidden"
               name="#15.axis"
-              value="Populism vs Establishmentarianism"
+              value="Protection vs Free-Trade"
             />
-            <input type="hidden" name="#15.category" value="Economic Issues" />
+            <input
+              type="hidden"
+              name="#15.category"
+              value="Economic Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#15.response"
                 id="#15.response"
-                aria-label="There is a correlation between education level and intelligence."
+                aria-label="The federal government should rarely implement tariffs."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -518,19 +627,24 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              17. Higher education is used as a tool by elites to maintain
-              power.
-            </p>
-            <input type="hidden" name="#16.bias" value="-1" />
+            <p class="question-text">17. Higher education is used as a tool by elites to maintain power.</p>
+            <input
+              type="hidden"
+              name="#16.bias"
+              value="-1"
+            />
             <input
               type="hidden"
               name="#16.axis"
               value="Populism vs Establishmentarianism"
             />
-            <input type="hidden" name="#16.category" value="Economic Issues" />
+            <input
+              type="hidden"
+              name="#16.category"
+              value="Economic Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
@@ -551,25 +665,30 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              18. People without college degrees are less equipped to make
-              political decisions.
-            </p>
-            <input type="hidden" name="#17.bias" value="1" />
+            <p class="question-text">18. Domestic production should be prioritized over trade.</p>
+            <input
+              type="hidden"
+              name="#17.bias"
+              value="-0.5"
+            />
             <input
               type="hidden"
               name="#17.axis"
-              value="Populism vs Establishmentarianism"
+              value="Protection vs Free-Trade"
             />
-            <input type="hidden" name="#17.category" value="Economic Issues" />
+            <input
+              type="hidden"
+              name="#17.category"
+              value="Economic Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#17.response"
                 id="#17.response"
-                aria-label="People without college degrees are less equipped to make political decisions."
+                aria-label="Domestic production should be prioritized over trade."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -584,24 +703,30 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              19. My nation should be free of class divisions.
-            </p>
-            <input type="hidden" name="#18.bias" value="-1" />
+            <p class="question-text">19. Massive increases in government spending are acceptable.</p>
+            <input
+              type="hidden"
+              name="#18.bias"
+              value="-1"
+            />
             <input
               type="hidden"
               name="#18.axis"
-              value="Equality vs Hierarchy"
+              value="Intervention vs Laissez-Faire Economics"
             />
-            <input type="hidden" name="#18.category" value="Economic Issues" />
+            <input
+              type="hidden"
+              name="#18.category"
+              value="Economic Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#18.response"
                 id="#18.response"
-                aria-label="My nation should be free of class divisions."
+                aria-label="Massive increases in government spending are acceptable."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -616,24 +741,30 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              20. The federal government should fund education.
-            </p>
-            <input type="hidden" name="#19.bias" value="-0.5" />
+            <p class="question-text">20. The federal government should help sectors of the economy in times of crisis.</p>
+            <input
+              type="hidden"
+              name="#19.bias"
+              value="-0.5"
+            />
             <input
               type="hidden"
               name="#19.axis"
               value="Intervention vs Laissez-Faire Economics"
             />
-            <input type="hidden" name="#19.category" value="Economic Issues" />
+            <input
+              type="hidden"
+              name="#19.category"
+              value="Economic Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#19.response"
                 id="#19.response"
-                aria-label="The federal government should fund education."
+                aria-label="The federal government should help sectors of the economy in times of crisis."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -648,28 +779,35 @@
               </div>
             </div>
           </div>
+           
         </section>
-
+        
         <section class="category-section">
           <h1 class="category-heading">Social Issues</h1>
-
+          
           <div class="question-card">
-            <p class="question-text">
-              21. Systemic racism is a problem in my nation.
-            </p>
-            <input type="hidden" name="#20.bias" value="-0.5" />
+            <p class="question-text">21. Abortion should be banned in almost every circumstance.</p>
+            <input
+              type="hidden"
+              name="#20.bias"
+              value="1"
+            />
             <input
               type="hidden"
               name="#20.axis"
-              value="Pro-Racial Equity vs Pro-Status Quo"
+              value="Feminism vs Traditional"
             />
-            <input type="hidden" name="#20.category" value="Social Issues" />
+            <input
+              type="hidden"
+              name="#20.category"
+              value="Social Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#20.response"
                 id="#20.response"
-                aria-label="Systemic racism is a problem in my nation."
+                aria-label="Abortion should be banned in almost every circumstance."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -684,25 +822,30 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              22. A pathway to citizenship should be given for undocumented
-              immigrants.
-            </p>
-            <input type="hidden" name="#21.bias" value="-0.5" />
+            <p class="question-text">22. Schools should promote teaching social justice over teaching subjects like math.</p>
+            <input
+              type="hidden"
+              name="#21.bias"
+              value="-1"
+            />
             <input
               type="hidden"
               name="#21.axis"
-              value="Multiculturalism vs Nativism"
+              value="Critic vs Loyalist"
             />
-            <input type="hidden" name="#21.category" value="Social Issues" />
+            <input
+              type="hidden"
+              name="#21.category"
+              value="Social Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#21.response"
                 id="#21.response"
-                aria-label="A pathway to citizenship should be given for undocumented immigrants."
+                aria-label="Schools should promote teaching social justice over teaching subjects like math."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -717,25 +860,30 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              23. Men are fundamentally sexist and cannot be trusted to look out
-              for women.
-            </p>
-            <input type="hidden" name="#22.bias" value="-1" />
+            <p class="question-text">23. Transgender women may change in women&#39;s lockers and compete in women&#39;s sports.</p>
+            <input
+              type="hidden"
+              name="#22.bias"
+              value="-1"
+            />
             <input
               type="hidden"
               name="#22.axis"
-              value="Feminism vs Traditional"
+              value="Pro-LGBTQIA+ vs Anti-LGBTQIA+"
             />
-            <input type="hidden" name="#22.category" value="Social Issues" />
+            <input
+              type="hidden"
+              name="#22.category"
+              value="Social Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#22.response"
                 id="#22.response"
-                aria-label="Men are fundamentally sexist and cannot be trusted to look out for women."
+                aria-label="Transgender women may change in women&#39;s lockers and compete in women&#39;s sports."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -750,19 +898,24 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              24. Immigrants that are undocumented deserve the same rights as
-              born citizens.
-            </p>
-            <input type="hidden" name="#23.bias" value="-1" />
+            <p class="question-text">24. Immigrants that are undocumented deserve the same rights as born citizens.</p>
+            <input
+              type="hidden"
+              name="#23.bias"
+              value="-1"
+            />
             <input
               type="hidden"
               name="#23.axis"
               value="Multiculturalism vs Nativism"
             />
-            <input type="hidden" name="#23.category" value="Social Issues" />
+            <input
+              type="hidden"
+              name="#23.category"
+              value="Social Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
@@ -783,23 +936,105 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              25. Employers should make the workforce as diverse as possible.
-            </p>
-            <input type="hidden" name="#24.bias" value="-0.5" />
+            <p class="question-text">25. Systemic racism is a problem in my nation.</p>
+            <input
+              type="hidden"
+              name="#24.bias"
+              value="-0.5"
+            />
             <input
               type="hidden"
               name="#24.axis"
               value="Pro-Racial Equity vs Pro-Status Quo"
             />
-            <input type="hidden" name="#24.category" value="Social Issues" />
+            <input
+              type="hidden"
+              name="#24.category"
+              value="Social Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#24.response"
                 id="#24.response"
+                aria-label="Systemic racism is a problem in my nation."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
+          <div class="question-card">
+            <p class="question-text">26. Fentanyl should be allowed for recreational use.</p>
+            <input
+              type="hidden"
+              name="#25.bias"
+              value="-1"
+            />
+            <input
+              type="hidden"
+              name="#25.axis"
+              value="Liberty vs Morality"
+            />
+            <input
+              type="hidden"
+              name="#25.category"
+              value="Social Issues"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#25.response"
+                id="#25.response"
+                aria-label="Fentanyl should be allowed for recreational use."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
+          <div class="question-card">
+            <p class="question-text">27. Employers should make the workforce as diverse as possible.</p>
+            <input
+              type="hidden"
+              name="#26.bias"
+              value="-0.5"
+            />
+            <input
+              type="hidden"
+              name="#26.axis"
+              value="Pro-Racial Equity vs Pro-Status Quo"
+            />
+            <input
+              type="hidden"
+              name="#26.category"
+              value="Social Issues"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#26.response"
+                id="#26.response"
                 aria-label="Employers should make the workforce as diverse as possible."
                 min="-1"
                 max="1"
@@ -815,84 +1050,24 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              26. More government power should go to states/provinces than the
-              federal government.
-            </p>
-            <input type="hidden" name="#25.bias" value="0.5" />
+            <p class="question-text">28. Power in society should be radically redistributed towards historically discriminated groups.</p>
             <input
               type="hidden"
-              name="#25.axis"
-              value="Centralism vs Confederalism"
+              name="#27.bias"
+              value="-1"
             />
-            <input type="hidden" name="#25.category" value="Social Issues" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#25.response"
-                id="#25.response"
-                aria-label="More government power should go to states/provinces than the federal government."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">
-              27. My nation&#39;s culture should remain predominant.
-            </p>
-            <input type="hidden" name="#26.bias" value="0.5" />
-            <input
-              type="hidden"
-              name="#26.axis"
-              value="Multiculturalism vs Nativism"
-            />
-            <input type="hidden" name="#26.category" value="Social Issues" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#26.response"
-                id="#26.response"
-                aria-label="My nation&#39;s culture should remain predominant."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">
-              28. Power in society should be radically redistributed towards
-              historically discriminated groups.
-            </p>
-            <input type="hidden" name="#27.bias" value="-1" />
             <input
               type="hidden"
               name="#27.axis"
               value="Pro-Racial Equity vs Pro-Status Quo"
             />
-            <input type="hidden" name="#27.category" value="Social Issues" />
+            <input
+              type="hidden"
+              name="#27.category"
+              value="Social Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
@@ -913,22 +1088,30 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">29. Gay marriage is a sin.</p>
-            <input type="hidden" name="#28.bias" value="1" />
+            <p class="question-text">29. My nation&#39;s culture should remain predominant.</p>
+            <input
+              type="hidden"
+              name="#28.bias"
+              value="0.5"
+            />
             <input
               type="hidden"
               name="#28.axis"
-              value="Pro-LGBTQIA+ vs Anti-LGBTQIA+"
+              value="Multiculturalism vs Nativism"
             />
-            <input type="hidden" name="#28.category" value="Social Issues" />
+            <input
+              type="hidden"
+              name="#28.category"
+              value="Social Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#28.response"
                 id="#28.response"
-                aria-label="Gay marriage is a sin."
+                aria-label="My nation&#39;s culture should remain predominant."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -943,20 +1126,30 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              30. Gambling recreationally is acceptable behavior.
-            </p>
-            <input type="hidden" name="#29.bias" value="-0.5" />
-            <input type="hidden" name="#29.axis" value="Liberty vs Morality" />
-            <input type="hidden" name="#29.category" value="Social Issues" />
+            <p class="question-text">30. Schools should have a curriculum that makes students think more highly of America.</p>
+            <input
+              type="hidden"
+              name="#29.bias"
+              value="0.5"
+            />
+            <input
+              type="hidden"
+              name="#29.axis"
+              value="Critic vs Loyalist"
+            />
+            <input
+              type="hidden"
+              name="#29.category"
+              value="Social Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#29.response"
                 id="#29.response"
-                aria-label="Gambling recreationally is acceptable behavior."
+                aria-label="Schools should have a curriculum that makes students think more highly of America."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -971,25 +1164,30 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              31. Women are naturally more suitable for some careers than
-              others.
-            </p>
-            <input type="hidden" name="#30.bias" value="0.5" />
+            <p class="question-text">31. Racial discrimination is not an issue at all in my nation.</p>
+            <input
+              type="hidden"
+              name="#30.bias"
+              value="1"
+            />
             <input
               type="hidden"
               name="#30.axis"
-              value="Feminism vs Traditional"
+              value="Pro-Racial Equity vs Pro-Status Quo"
             />
-            <input type="hidden" name="#30.category" value="Social Issues" />
+            <input
+              type="hidden"
+              name="#30.category"
+              value="Social Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#30.response"
                 id="#30.response"
-                aria-label="Women are naturally more suitable for some careers than others."
+                aria-label="Racial discrimination is not an issue at all in my nation."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -1004,24 +1202,30 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              32. Abortion should be banned in almost every circumstance.
-            </p>
-            <input type="hidden" name="#31.bias" value="1" />
+            <p class="question-text">32. A greater acceptance of the transgender community is good for society.</p>
+            <input
+              type="hidden"
+              name="#31.bias"
+              value="-0.5"
+            />
             <input
               type="hidden"
               name="#31.axis"
-              value="Feminism vs Traditional"
+              value="Pro-LGBTQIA+ vs Anti-LGBTQIA+"
             />
-            <input type="hidden" name="#31.category" value="Social Issues" />
+            <input
+              type="hidden"
+              name="#31.category"
+              value="Social Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#31.response"
                 id="#31.response"
-                aria-label="Abortion should be banned in almost every circumstance."
+                aria-label="A greater acceptance of the transgender community is good for society."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -1036,22 +1240,30 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">33. States should be allowed to secede.</p>
-            <input type="hidden" name="#32.bias" value="1" />
+            <p class="question-text">33. A pathway to citizenship should be given for undocumented immigrants.</p>
+            <input
+              type="hidden"
+              name="#32.bias"
+              value="-0.5"
+            />
             <input
               type="hidden"
               name="#32.axis"
-              value="Centralism vs Confederalism"
+              value="Multiculturalism vs Nativism"
             />
-            <input type="hidden" name="#32.category" value="Social Issues" />
+            <input
+              type="hidden"
+              name="#32.category"
+              value="Social Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#32.response"
                 id="#32.response"
-                aria-label="States should be allowed to secede."
+                aria-label="A pathway to citizenship should be given for undocumented immigrants."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -1066,18 +1278,24 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              34. My nation needs to stop immigration for some time.
-            </p>
-            <input type="hidden" name="#33.bias" value="1" />
+            <p class="question-text">34. My nation needs to stop immigration for some time.</p>
+            <input
+              type="hidden"
+              name="#33.bias"
+              value="1"
+            />
             <input
               type="hidden"
               name="#33.axis"
               value="Multiculturalism vs Nativism"
             />
-            <input type="hidden" name="#33.category" value="Social Issues" />
+            <input
+              type="hidden"
+              name="#33.category"
+              value="Social Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
@@ -1098,146 +1316,29 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              35. Schools should have a curriculum that makes students think
-              more highly of America.
-            </p>
-            <input type="hidden" name="#34.bias" value="0.5" />
-            <input type="hidden" name="#34.axis" value="Critic vs Loyalist" />
-            <input type="hidden" name="#34.category" value="Social Issues" />
+            <p class="question-text">35. Women deserve more representation in the workforce.</p>
+            <input
+              type="hidden"
+              name="#34.bias"
+              value="-0.5"
+            />
+            <input
+              type="hidden"
+              name="#34.axis"
+              value="Feminism vs Traditional"
+            />
+            <input
+              type="hidden"
+              name="#34.category"
+              value="Social Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#34.response"
                 id="#34.response"
-                aria-label="Schools should have a curriculum that makes students think more highly of America."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">
-              36. Schools should promote teaching social justice over teaching
-              subjects like math.
-            </p>
-            <input type="hidden" name="#35.bias" value="-1" />
-            <input type="hidden" name="#35.axis" value="Critic vs Loyalist" />
-            <input type="hidden" name="#35.category" value="Social Issues" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#35.response"
-                id="#35.response"
-                aria-label="Schools should promote teaching social justice over teaching subjects like math."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">
-              37. A greater acceptance of the transgender community is good for
-              society.
-            </p>
-            <input type="hidden" name="#36.bias" value="-0.5" />
-            <input
-              type="hidden"
-              name="#36.axis"
-              value="Pro-LGBTQIA+ vs Anti-LGBTQIA+"
-            />
-            <input type="hidden" name="#36.category" value="Social Issues" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#36.response"
-                id="#36.response"
-                aria-label="A greater acceptance of the transgender community is good for society."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">
-              38. Racial discrimination is not an issue at all in my nation.
-            </p>
-            <input type="hidden" name="#37.bias" value="1" />
-            <input
-              type="hidden"
-              name="#37.axis"
-              value="Pro-Racial Equity vs Pro-Status Quo"
-            />
-            <input type="hidden" name="#37.category" value="Social Issues" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#37.response"
-                id="#37.response"
-                aria-label="Racial discrimination is not an issue at all in my nation."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">
-              39. Women deserve more representation in the workforce.
-            </p>
-            <input type="hidden" name="#38.bias" value="-0.5" />
-            <input
-              type="hidden"
-              name="#38.axis"
-              value="Feminism vs Traditional"
-            />
-            <input type="hidden" name="#38.category" value="Social Issues" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#38.response"
-                id="#38.response"
                 aria-label="Women deserve more representation in the workforce."
                 min="-1"
                 max="1"
@@ -1253,83 +1354,30 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              40. Fentanyl should be allowed for recreational use.
-            </p>
-            <input type="hidden" name="#39.bias" value="-1" />
-            <input type="hidden" name="#39.axis" value="Liberty vs Morality" />
-            <input type="hidden" name="#39.category" value="Social Issues" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#39.response"
-                id="#39.response"
-                aria-label="Fentanyl should be allowed for recreational use."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">41. States should not exist.</p>
-            <input type="hidden" name="#40.bias" value="-1" />
+            <p class="question-text">36. Men are fundamentally sexist and cannot be trusted to look out for women.</p>
             <input
               type="hidden"
-              name="#40.axis"
-              value="Centralism vs Confederalism"
+              name="#35.bias"
+              value="-1"
             />
-            <input type="hidden" name="#40.category" value="Social Issues" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#40.response"
-                id="#40.response"
-                aria-label="States should not exist."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">
-              42. Transgender women may change in women&#39;s lockers and
-              compete in women&#39;s sports.
-            </p>
-            <input type="hidden" name="#41.bias" value="-1" />
             <input
               type="hidden"
-              name="#41.axis"
-              value="Pro-LGBTQIA+ vs Anti-LGBTQIA+"
+              name="#35.axis"
+              value="Feminism vs Traditional"
             />
-            <input type="hidden" name="#41.category" value="Social Issues" />
+            <input
+              type="hidden"
+              name="#35.category"
+              value="Social Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
-                name="#41.response"
-                id="#41.response"
-                aria-label="Transgender women may change in women&#39;s lockers and compete in women&#39;s sports."
+                name="#35.response"
+                id="#35.response"
+                aria-label="Men are fundamentally sexist and cannot be trusted to look out for women."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -1344,21 +1392,30 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              43. Schools should avoid teaching anything that might make
-              students think negatively about America.
-            </p>
-            <input type="hidden" name="#42.bias" value="1" />
-            <input type="hidden" name="#42.axis" value="Critic vs Loyalist" />
-            <input type="hidden" name="#42.category" value="Social Issues" />
+            <p class="question-text">37. Women are naturally more suitable for some careers than others.</p>
+            <input
+              type="hidden"
+              name="#36.bias"
+              value="0.5"
+            />
+            <input
+              type="hidden"
+              name="#36.axis"
+              value="Feminism vs Traditional"
+            />
+            <input
+              type="hidden"
+              name="#36.category"
+              value="Social Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
-                name="#42.response"
-                id="#42.response"
-                aria-label="Schools should avoid teaching anything that might make students think negatively about America."
+                name="#36.response"
+                id="#36.response"
+                aria-label="Women are naturally more suitable for some careers than others."
                 min="-1"
                 max="1"
                 step="0.01"
@@ -1373,19 +1430,29 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              44. Prohibition of alcohol is a good idea.
-            </p>
-            <input type="hidden" name="#43.bias" value="1" />
-            <input type="hidden" name="#43.axis" value="Liberty vs Morality" />
-            <input type="hidden" name="#43.category" value="Social Issues" />
+            <p class="question-text">38. Prohibition of alcohol is a good idea.</p>
+            <input
+              type="hidden"
+              name="#37.bias"
+              value="1"
+            />
+            <input
+              type="hidden"
+              name="#37.axis"
+              value="Liberty vs Morality"
+            />
+            <input
+              type="hidden"
+              name="#37.category"
+              value="Social Issues"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
-                name="#43.response"
-                id="#43.response"
+                name="#37.response"
+                id="#37.response"
                 aria-label="Prohibition of alcohol is a good idea."
                 min="-1"
                 max="1"
@@ -1401,126 +1468,262 @@
               </div>
             </div>
           </div>
+           
+          <div class="question-card">
+            <p class="question-text">39. Gay marriage is a sin.</p>
+            <input
+              type="hidden"
+              name="#38.bias"
+              value="1"
+            />
+            <input
+              type="hidden"
+              name="#38.axis"
+              value="Pro-LGBTQIA+ vs Anti-LGBTQIA+"
+            />
+            <input
+              type="hidden"
+              name="#38.category"
+              value="Social Issues"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#38.response"
+                id="#38.response"
+                aria-label="Gay marriage is a sin."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
+          <div class="question-card">
+            <p class="question-text">40. States should be allowed to secede.</p>
+            <input
+              type="hidden"
+              name="#39.bias"
+              value="1"
+            />
+            <input
+              type="hidden"
+              name="#39.axis"
+              value="Centralism vs Confederalism"
+            />
+            <input
+              type="hidden"
+              name="#39.category"
+              value="Social Issues"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#39.response"
+                id="#39.response"
+                aria-label="States should be allowed to secede."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
+          <div class="question-card">
+            <p class="question-text">41. Gambling recreationally is acceptable behavior.</p>
+            <input
+              type="hidden"
+              name="#40.bias"
+              value="-0.5"
+            />
+            <input
+              type="hidden"
+              name="#40.axis"
+              value="Liberty vs Morality"
+            />
+            <input
+              type="hidden"
+              name="#40.category"
+              value="Social Issues"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#40.response"
+                id="#40.response"
+                aria-label="Gambling recreationally is acceptable behavior."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
+          <div class="question-card">
+            <p class="question-text">42. More government power should go to states/provinces than the federal government.</p>
+            <input
+              type="hidden"
+              name="#41.bias"
+              value="0.5"
+            />
+            <input
+              type="hidden"
+              name="#41.axis"
+              value="Centralism vs Confederalism"
+            />
+            <input
+              type="hidden"
+              name="#41.category"
+              value="Social Issues"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#41.response"
+                id="#41.response"
+                aria-label="More government power should go to states/provinces than the federal government."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
+          <div class="question-card">
+            <p class="question-text">43. States should not exist.</p>
+            <input
+              type="hidden"
+              name="#42.bias"
+              value="-1"
+            />
+            <input
+              type="hidden"
+              name="#42.axis"
+              value="Centralism vs Confederalism"
+            />
+            <input
+              type="hidden"
+              name="#42.category"
+              value="Social Issues"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#42.response"
+                id="#42.response"
+                aria-label="States should not exist."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
+          <div class="question-card">
+            <p class="question-text">44. Schools should avoid teaching anything that might make students think negatively about America.</p>
+            <input
+              type="hidden"
+              name="#43.bias"
+              value="1"
+            />
+            <input
+              type="hidden"
+              name="#43.axis"
+              value="Critic vs Loyalist"
+            />
+            <input
+              type="hidden"
+              name="#43.category"
+              value="Social Issues"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#43.response"
+                id="#43.response"
+                aria-label="Schools should avoid teaching anything that might make students think negatively about America."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
         </section>
-
+        
         <section class="category-section">
           <h1 class="category-heading">Foreign Policy</h1>
-
+          
           <div class="question-card">
-            <p class="question-text">
-              45. International human rights are more important than strategic
-              interests.
-            </p>
-            <input type="hidden" name="#44.bias" value="-0.5" />
+            <p class="question-text">45. Economic interests are worth compromising on some human rights.</p>
+            <input
+              type="hidden"
+              name="#44.bias"
+              value="1"
+            />
             <input
               type="hidden"
               name="#44.axis"
               value="Humanitarianism vs Productivism"
             />
-            <input type="hidden" name="#44.category" value="Foreign Policy" />
+            <input
+              type="hidden"
+              name="#44.category"
+              value="Foreign Policy"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
                 name="#44.response"
                 id="#44.response"
-                aria-label="International human rights are more important than strategic interests."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">
-              46. My nation should use the most dangerous weapons at its
-              disposal more.
-            </p>
-            <input type="hidden" name="#45.bias" value="-1" />
-            <input
-              type="hidden"
-              name="#45.axis"
-              value="Militarism vs Pacifism"
-            />
-            <input type="hidden" name="#45.category" value="Foreign Policy" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#45.response"
-                id="#45.response"
-                aria-label="My nation should use the most dangerous weapons at its disposal more."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">
-              47. My nation should reduce military spending.
-            </p>
-            <input type="hidden" name="#46.bias" value="0.5" />
-            <input
-              type="hidden"
-              name="#46.axis"
-              value="Militarism vs Pacifism"
-            />
-            <input type="hidden" name="#46.category" value="Foreign Policy" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#46.response"
-                id="#46.response"
-                aria-label="My nation should reduce military spending."
-                min="-1"
-                max="1"
-                step="0.01"
-                value="0"
-              />
-              <div class="slider-labels">
-                <span>Strongly Disagree</span>
-                <span>Disagree</span>
-                <span>Neutral</span>
-                <span>Agree</span>
-                <span>Strongly Agree</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="question-card">
-            <p class="question-text">
-              48. Economic interests are worth compromising on some human
-              rights.
-            </p>
-            <input type="hidden" name="#47.bias" value="1" />
-            <input
-              type="hidden"
-              name="#47.axis"
-              value="Humanitarianism vs Productivism"
-            />
-            <input type="hidden" name="#47.category" value="Foreign Policy" />
-            <div class="slider-wrapper">
-              <input
-                type="range"
-                name="#47.response"
-                id="#47.response"
                 aria-label="Economic interests are worth compromising on some human rights."
                 min="-1"
                 max="1"
@@ -1536,23 +1739,29 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              49. My nation should not have a military.
-            </p>
-            <input type="hidden" name="#48.bias" value="1" />
+            <p class="question-text">46. My nation should not have a military.</p>
             <input
               type="hidden"
-              name="#48.axis"
+              name="#45.bias"
+              value="1"
+            />
+            <input
+              type="hidden"
+              name="#45.axis"
               value="Militarism vs Pacifism"
             />
-            <input type="hidden" name="#48.category" value="Foreign Policy" />
+            <input
+              type="hidden"
+              name="#45.category"
+              value="Foreign Policy"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
-                name="#48.response"
-                id="#48.response"
+                name="#45.response"
+                id="#45.response"
                 aria-label="My nation should not have a military."
                 min="-1"
                 max="1"
@@ -1568,24 +1777,29 @@
               </div>
             </div>
           </div>
-
+           
           <div class="question-card">
-            <p class="question-text">
-              50. My nation should only cooperate with nations that have clean
-              human rights records.
-            </p>
-            <input type="hidden" name="#49.bias" value="-1" />
+            <p class="question-text">47. My nation should only cooperate with nations that have clean human rights records.</p>
             <input
               type="hidden"
-              name="#49.axis"
+              name="#46.bias"
+              value="-1"
+            />
+            <input
+              type="hidden"
+              name="#46.axis"
               value="Humanitarianism vs Productivism"
             />
-            <input type="hidden" name="#49.category" value="Foreign Policy" />
+            <input
+              type="hidden"
+              name="#46.category"
+              value="Foreign Policy"
+            />
             <div class="slider-wrapper">
               <input
                 type="range"
-                name="#49.response"
-                id="#49.response"
+                name="#46.response"
+                id="#46.response"
                 aria-label="My nation should only cooperate with nations that have clean human rights records."
                 min="-1"
                 max="1"
@@ -1601,7 +1815,123 @@
               </div>
             </div>
           </div>
+           
+          <div class="question-card">
+            <p class="question-text">48. My nation should use the most dangerous weapons at its disposal more.</p>
+            <input
+              type="hidden"
+              name="#47.bias"
+              value="-1"
+            />
+            <input
+              type="hidden"
+              name="#47.axis"
+              value="Militarism vs Pacifism"
+            />
+            <input
+              type="hidden"
+              name="#47.category"
+              value="Foreign Policy"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#47.response"
+                id="#47.response"
+                aria-label="My nation should use the most dangerous weapons at its disposal more."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
+          <div class="question-card">
+            <p class="question-text">49. International human rights are more important than strategic interests.</p>
+            <input
+              type="hidden"
+              name="#48.bias"
+              value="-0.5"
+            />
+            <input
+              type="hidden"
+              name="#48.axis"
+              value="Humanitarianism vs Productivism"
+            />
+            <input
+              type="hidden"
+              name="#48.category"
+              value="Foreign Policy"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#48.response"
+                id="#48.response"
+                aria-label="International human rights are more important than strategic interests."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
+          <div class="question-card">
+            <p class="question-text">50. My nation should reduce military spending.</p>
+            <input
+              type="hidden"
+              name="#49.bias"
+              value="0.5"
+            />
+            <input
+              type="hidden"
+              name="#49.axis"
+              value="Militarism vs Pacifism"
+            />
+            <input
+              type="hidden"
+              name="#49.category"
+              value="Foreign Policy"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#49.response"
+                id="#49.response"
+                aria-label="My nation should reduce military spending."
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
+              </div>
+            </div>
+          </div>
+           
         </section>
+        
 
         <div class="submit-row">
           <button type="submit" class="btn-submit">See My Results</button>
@@ -1609,11 +1939,7 @@
       </form>
     </div>
 
-    <div
-      id="scale-order"
-      data-value='{"Economic Issues": [["Populism vs Establishmentarianism", -1], ["Equality vs Hierarchy", 0], ["Protection vs Free-Trade", 1], ["Intervention vs Laissez-Faire Economics", 1]], "Social Issues": [["Pro-Racial Equity vs Pro-Status Quo", 0], ["Feminism vs Traditional", 0], ["Multiculturalism vs Nativism", 0], ["Liberty vs Morality", 0], ["Pro-LGBTQIA+ vs Anti-LGBTQIA+", 0], ["Critic vs Loyalist", 0], ["Centralism vs Confederalism", 1]], "Foreign Policy": [["Humanitarianism vs Productivism", 0], ["Militarism vs Pacifism", 1]]}'
-      hidden
-    ></div>
+    <div id="scale-order" data-value="{"Economic Issues": [["Populism vs Establishmentarianism", -1], ["Equality vs Hierarchy", 0], ["Protection vs Free-Trade", 1], ["Intervention vs Laissez-Faire Economics", 1]], "Social Issues": [["Pro-Racial Equity vs Pro-Status Quo", 0], ["Feminism vs Traditional", 0], ["Multiculturalism vs Nativism", 0], ["Liberty vs Morality", 0], ["Pro-LGBTQIA+ vs Anti-LGBTQIA+", 0], ["Critic vs Loyalist", 0], ["Centralism vs Confederalism", 1]], "Foreign Policy": [["Humanitarianism vs Productivism", 0], ["Militarism vs Pacifism", 1]]}" hidden></div>
     <script src="../static/quiz.js"></script>
   </body>
 </html>
