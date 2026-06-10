@@ -56,6 +56,20 @@
   <script src="{{ url_for('static', filename='script.js') }}"></script>
   <div id="scale-order" data-value='{{ scale_order | tojson }}' hidden></div>
   <script>
+    // Shuffle questions within each category on every visit (order is baked in at freeze time)
+    document.querySelectorAll('.category-section').forEach(section => {
+      const cards = Array.from(section.querySelectorAll('.question-card'));
+      for (let i = cards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cards[i], cards[j]] = [cards[j], cards[i]];
+      }
+      cards.forEach(card => section.appendChild(card));
+    });
+    let questionNumber = 1;
+    document.querySelectorAll('.question-text').forEach(p => {
+      p.textContent = p.textContent.replace(/^\s*\d+\./, questionNumber++ + '.');
+    });
+
     const scaleOrder = JSON.parse(document.getElementById('scale-order').dataset.value);
 
     function getView(bias, response) {
