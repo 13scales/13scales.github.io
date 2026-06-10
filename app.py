@@ -21,20 +21,26 @@ with open("quiz.json") as file:
             colors.append((subquestions["color1"], subquestions["color2"]))
             scale_order[category].append((scale, subquestions["axis"]))
 
+
 @app.route("/assets/<path:filename>")
 def serve_assets(filename):
     return send_from_directory("assets", filename)
 
+
 @app.route("/")
 def index():
     return render_template("index.html")
+
 
 @app.route("/quiz/")
 def quiz():
     for category in questions_categorized:
         random.shuffle(questions_categorized[category])
 
-    return render_template("quiz.html", questions=questions_categorized, scale_order=scale_order)
+    return render_template(
+        "quiz.html", questions=questions_categorized, scale_order=scale_order
+    )
+
 
 @app.route("/results/")
 def results():
@@ -56,12 +62,32 @@ def results():
                 label = f"As much {first_ideology} as {second_ideology}"
 
             else:
-                intensity = "Slight" if difference < 15 else "Moderate" if difference < 40 else "Strong" if difference < 70 else "Extreme"
-                dominant = first_ideology if first_percent > second_percent else second_ideology
+                intensity = (
+                    "Slight"
+                    if difference < 15
+                    else "Moderate"
+                    if difference < 40
+                    else "Strong"
+                    if difference < 70
+                    else "Extreme"
+                )
+                dominant = (
+                    first_ideology
+                    if first_percent > second_percent
+                    else second_ideology
+                )
                 label = f"{intensity} {dominant}"
 
-            scales.append({"axis": axis, "1st": first_ideology, "2nd": second_ideology,
-                           "1st%": first_percent, "2nd%": second_percent, "label": label})
+            scales.append(
+                {
+                    "axis": axis,
+                    "1st": first_ideology,
+                    "2nd": second_ideology,
+                    "1st%": first_percent,
+                    "2nd%": second_percent,
+                    "label": label,
+                }
+            )
 
             if dimension == 0:
                 horizontal_sum += second_percent * 0.02 - 1
@@ -71,9 +97,22 @@ def results():
                 vertical_sum += first_percent * 0.02 - 1
                 vertical_count += 1
 
-        coordinates.append({"category": category, "x": horizontal_sum / horizontal_count, "y": vertical_sum / vertical_count})
+        coordinates.append(
+            {
+                "category": category,
+                "x": horizontal_sum / horizontal_count,
+                "y": vertical_sum / vertical_count,
+            }
+        )
 
-    return render_template("results.html", scales=scales, colors=colors, planes=coordinates, scale_order=scale_order)
+    return render_template(
+        "results.html",
+        scales=scales,
+        colors=colors,
+        planes=coordinates,
+        scale_order=scale_order,
+    )
+
 
 if __name__ == "__main__":
     app.run()

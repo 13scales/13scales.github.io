@@ -1,60 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Political Quiz</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
-  <div class="sticky-bar">
-    <span>13 Scales</span>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Political Quiz</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="sticky-bar">
+      <span>13 Scales</span>
+    </div>
 
-<div class="quiz-container">
-    <form id="quiz-form">
-      {% set ns = namespace(index=0) %}
-      {% for category, subquestions in questions.items() %}
+    <div class="quiz-container">
+      <form id="quiz-form">
+        {% set ns = namespace(index=0) %} {% for category, subquestions in
+        questions.items() %}
         <section class="category-section">
           <h1 class="category-heading">{{ category }}</h1>
           {% for question in subquestions %}
-            <div class="question-card">
-              <p class="question-text">{{ ns.index + 1 }}. {{ question[2] }}</p>
-              <input type="hidden" name="#{{ ns.index }}.bias"     value="{{ question[1] }}">
-              <input type="hidden" name="#{{ ns.index }}.axis"     value="{{ question[0] }}">
-              <input type="hidden" name="#{{ ns.index }}.category" value="{{ category }}">
-              <div class="slider-wrapper">
-                <input
-                  type="range"
-                  name="#{{ ns.index }}.response"
-                  id="#{{ ns.index }}.response"
-                  aria-label="{{ question[2] }}"
-                  min="-1"
-                  max="1"
-                  step="0.01"
-                  value="0"
-                >
-                <div class="slider-labels">
-                  <span>Strongly Disagree</span>
-                  <span>Disagree</span>
-                  <span>Neutral</span>
-                  <span>Agree</span>
-                  <span>Strongly Agree</span>
-                </div>
+          <div class="question-card">
+            <p class="question-text">{{ ns.index + 1 }}. {{ question[2] }}</p>
+            <input
+              type="hidden"
+              name="#{{ ns.index }}.bias"
+              value="{{ question[1] }}"
+            />
+            <input
+              type="hidden"
+              name="#{{ ns.index }}.axis"
+              value="{{ question[0] }}"
+            />
+            <input
+              type="hidden"
+              name="#{{ ns.index }}.category"
+              value="{{ category }}"
+            />
+            <div class="slider-wrapper">
+              <input
+                type="range"
+                name="#{{ ns.index }}.response"
+                id="#{{ ns.index }}.response"
+                aria-label="{{ question[2] }}"
+                min="-1"
+                max="1"
+                step="0.01"
+                value="0"
+              />
+              <div class="slider-labels">
+                <span>Strongly Disagree</span>
+                <span>Disagree</span>
+                <span>Neutral</span>
+                <span>Agree</span>
+                <span>Strongly Agree</span>
               </div>
             </div>
-            {% set ns.index = ns.index + 1 %}
-          {% endfor %}
+          </div>
+          {% set ns.index = ns.index + 1 %} {% endfor %}
         </section>
-      {% endfor %}
+        {% endfor %}
 
-      <div class="submit-row">
-        <button type="submit" class="btn-submit">See My Results</button>
-      </div>
-    </form>
-  </div>
+        <div class="submit-row">
+          <button type="submit" class="btn-submit">See My Results</button>
+        </div>
+      </form>
+    </div>
 
-  <div id="scale-order" data-value='{{ scale_order | tojson }}' hidden></div>
-  <script src="{{ url_for('static', filename='quiz.js') }}"></script>
-</body>
+    <div id="scale-order" data-value="{{ scale_order | tojson }}" hidden></div>
+    <script src="{{ url_for('static', filename='quiz.js') }}"></script>
+  </body>
 </html>
