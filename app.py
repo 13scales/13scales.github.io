@@ -16,7 +16,7 @@ with open("quiz.json") as file:
         for scale, subquestions in scales.items():
             for question_text, bias in subquestions.items():
                 if isinstance(bias, (int, float)) and question_text != "axis":
-                   questions_categorized[category].append([scale, bias, question_text])
+                    questions_categorized[category].append([scale, bias, question_text])
 
             colors.append((subquestions["color1"], subquestions["color2"]))
             scale_order[category].append((scale, subquestions["axis"]))
@@ -47,7 +47,7 @@ def results():
 
         for index, (axis, dimension) in enumerate(axes):
             first_percent = int(request.args.get(f"{category[0]}{index}", 50))
-            second_percent = round(100 - first_percent, 1)
+            second_percent = 100 - first_percent
             difference = abs(first_percent - second_percent)
 
             first_ideology, second_ideology = axis.split(" vs ")
@@ -76,4 +76,4 @@ def results():
     return render_template("results.html", scales=scales, colors=colors, planes=coordinates, scale_order=scale_order)
 
 if __name__ == "__main__":
-   app.run(debug=True)
+    app.run()
