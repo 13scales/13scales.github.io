@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Results</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <style>
+      .planes-section {
+        margin-bottom: 2rem;
+      }
+      .planes-row {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+      .plane-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+      }
+      .plane-title {
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--text);
+        text-align: center;
+      }
+      .plane-outer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2rem;
+      }
+      .plane-middle {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+      }
+      .plane-dir {
+        font-size: 0.72rem;
+        font-weight: 600;
+        color: var(--muted);
+        user-select: none;
+      }
+      .plane-dir.left,
+      .plane-dir.right {
+        width: 2.2rem;
+        text-align: center;
+      }
+      .plane-svg {
+        width: 180px;
+        height: 180px;
+        background: var(--card);
+        border-radius: 8px;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+        overflow: visible;
+      }
+      .bar-with-icons {
+        display: flex;
+        align-items: center;
+        gap: 0;
+      }
+      .bar-with-icons .bar-track {
+        flex: 1;
+        border-radius: 0;
+        position: relative;
+        overflow: visible;
+      }
+      .scale-icon {
+        width: 120px;
+        height: 120px;
+        object-fit: contain;
+        flex-shrink: 0;
+      }
+      .bar-with-icons .scale-icon:first-child {
+        object-position: right center;
+      }
+      .bar-with-icons .scale-icon:last-child {
+        object-position: left center;
+      }
+      .bar-pct {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: 600;
+        pointer-events: none;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      }
+      .bar-pct.pct-left {
+        left: 0.5rem;
+      }
+      .bar-pct.pct-right {
+        right: 0.5rem;
+      }
+
+      @media (max-width: 600px) {
+        .planes-row {
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+        .scale-icon {
+          width: 64px;
+          height: 64px;
+        }
+        .bar-track {
+          height: 56px;
+        }
+        .bar-pct {
+          font-size: 1rem;
+        }
+        .axis-label {
+          font-size: 1.25rem;
+        }
+      }
+    </style>
+
+    <div class="results-container">
+      <h1 class="results-title">You are/support:</h1>
+
+      <div class="planes-section">
+        <div class="planes-row">
+          {% for plane in planes[:2] %}
+          <div class="plane-box">
+            <div class="plane-title">{{ plane.category }}</div>
+            <div class="plane-outer">
+              <span class="plane-dir">Up</span>
+              <div class="plane-middle">
+                <span class="plane-dir left">Left</span>
+                <svg
+                  class="plane-svg"
+                  viewBox="0 0 180 180"
+                  data-x="{{ plane.x }}"
+                  data-y="{{ plane.y }}"
+                >
+                  <line
+                    x1="90"
+                    y1="0"
+                    x2="90"
+                    y2="180"
+                    stroke="#e5e7eb"
+                    stroke-width="1.5"
+                  />
+                  <line
+                    x1="0"
+                    y1="90"
+                    x2="180"
+                    y2="90"
+                    stroke="#e5e7eb"
+                    stroke-width="1.5"
+                  />
+                  <circle
+                    class="plane-dot"
+                    cx="90"
+                    cy="90"
+                    r="6"
+                    fill="#3b82f6"
+                    stroke="#fff"
+                    stroke-width="2"
+                  />
+                </svg>
+                <span class="plane-dir right">Right</span>
+              </div>
+              <span class="plane-dir">Down</span>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        {% if planes|length > 2 %}
+        <div class="planes-row">
+          <div class="plane-box">
+            <div class="plane-title">{{ planes[2].category }}</div>
+            <div class="plane-outer">
+              <span class="plane-dir">Up</span>
+              <div class="plane-middle">
+                <span class="plane-dir left">Left</span>
+                <svg
+                  class="plane-svg"
+                  viewBox="0 0 180 180"
+                  data-x="{{ planes[2].x }}"
+                  data-y="{{ planes[2].y }}"
+                >
+                  <line
+                    x1="90"
+                    y1="0"
+                    x2="90"
+                    y2="180"
+                    stroke="#e5e7eb"
+                    stroke-width="1.5"
+                  />
+                  <line
+                    x1="0"
+                    y1="90"
+                    x2="180"
+                    y2="90"
+                    stroke="#e5e7eb"
+                    stroke-width="1.5"
+                  />
+                  <circle
+                    class="plane-dot"
+                    cx="90"
+                    cy="90"
+                    r="6"
+                    fill="#3b82f6"
+                    stroke="#fff"
+                    stroke-width="2"
+                  />
+                </svg>
+                <span class="plane-dir right">Right</span>
+              </div>
+              <span class="plane-dir">Down</span>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+
+      {% for scale in scales %}
+      <div class="axis-result">
+        <div class="axis-label">{{ scale.label }}</div>
+        <div class="bar-with-icons">
+          <img
+            class="scale-icon"
+            src="{{ url_for('serve_assets', filename=(scale['1st'] | lower | replace(' ', '-')) ~ '.png') }}"
+            alt="{{ scale['1st'] }}"
+          />
+          <div class="bar-track">
+            <div
+              class="bar-left"
+              data-w="{{ scale['1st%'] }}"
+              data-color="{{ colors[loop.index0][0] }}"
+            ></div>
+            <div
+              class="bar-right"
+              data-w="{{ scale['2nd%'] }}"
+              data-color="{{ colors[loop.index0][1] }}"
+            ></div>
+            {% if scale['1st%'] >= 7 %}<span class="bar-pct pct-left"
+              >{{scale['1st%']}}%</span
+            >{% endif %} {% if scale['2nd%'] >= 7 %}<span
+              class="bar-pct pct-right"
+              >{{scale['2nd%']}}%</span
+            >{% endif %}
+          </div>
+          <img
+            class="scale-icon"
+            src="{{ url_for('serve_assets', filename=(scale['2nd'] | lower | replace(' ', '-')) ~ '.png') }}"
+            alt="{{ scale['2nd'] }}"
+          />
+        </div>
+      </div>
+      {% endfor %}
+
+      <div class="retake-row">
+        <a href="../quiz/" class="btn-start">Retake Quiz</a>
+      </div>
+    </div>
+    <div id="scale-order" data-value="{{ scale_order | tojson }}" hidden></div>
+    <script src="{{ url_for('static', filename='results.js') }}"></script>
+  </body>
+</html>
