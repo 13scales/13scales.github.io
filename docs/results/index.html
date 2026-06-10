@@ -89,6 +89,26 @@
     }
     .bar-pct.pct-left  { left:  0.5rem; }
     .bar-pct.pct-right { right: 0.5rem; }
+
+    @media (max-width: 600px) {
+      .planes-row {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .scale-icon {
+        width: 64px;
+        height: 64px;
+      }
+      .bar-track {
+        height: 56px;
+      }
+      .bar-pct {
+        font-size: 1rem;
+      }
+      .axis-label {
+        font-size: 1.25rem;
+      }
+    }
   </style>
 
   <div class="results-container">
