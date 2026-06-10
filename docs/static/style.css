@@ -235,6 +235,23 @@ input[type="range"]::-moz-range-thumb {
   text-align: center;
 }
 
+@media (max-width: 480px) {
+  .slider-labels {
+    height: 2.6em;
+    font-size: 0.62rem;
+  }
+
+  .slider-labels span {
+    white-space: normal;
+    max-width: 4.8em;
+    line-height: 1.2;
+  }
+
+  .slider-labels span:nth-child(5) {
+    text-align: right;
+  }
+}
+
 .slider-value.positive {
   color: var(--red);
 }
