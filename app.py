@@ -2,7 +2,7 @@ import json
 import random
 from typing import Annotated
 from collections import defaultdict
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 
 type Scale = Annotated[int, "[-1, 1]"]
 
@@ -28,19 +28,23 @@ def get_view(bias: Scale, response: Scale) -> Scale:
 app = Flask(__name__)
 
 questions_categorized = defaultdict(list)
-axis_order = defaultdict(list)
+scale_order = defaultdict(list)
 
 colors = []
 
 with open("quiz.json") as file:
-    for category, axes in json.load(file).items():
-        for axis, subquestions in axes.items():
+    for category, scales in json.load(file).items():
+        for scale, subquestions in scales.items():
             for question_text, bias in subquestions.items():
-                if isinstance(bias, (int, float)):
-                   questions_categorized[category].append([axis, bias, question_text])
+                if isinstance(bias, (int, float)) and question_text != "axis":
+                   questions_categorized[category].append([scale, bias, question_text])
 
             colors.append((subquestions["color1"], subquestions["color2"]))
-            axis_order[category].append(axis)
+            scale_order[category].append((scale, subquestions["axis"]))
+
+@app.route("/assets/<path:filename>")
+def serve_assets(filename):
+    return send_from_directory("assets", filename)
 
 @app.route("/")
 def index():
@@ -64,17 +68,21 @@ def results_post():
         axis_views[category][axis][0] += get_view(bias, response)
         axis_views[category][axis][1] += 1
 
-    parameters = {f"{category[0]}{index}": round((1 - axis_views[category][axis][0] / axis_views[category][axis][1]) * 50)
-                  for category, axes in axis_order.items() for index, axis in enumerate(axes)}
+    parameters = {f"{category[0]}{index}": ((1 - axis_views[category][axis][0] / axis_views[category][axis][1]) * 50 + 0.5) // 1
+                  for category, axes in scale_order.items() for index, (axis, _) in enumerate(axes)}
 
     return redirect(url_for("results", **parameters))
 
 @app.route("/results")
 def results():
     scales = []
+    coordinates = []
 
-    for category, axes in axis_order.items():
-        for index, axis in enumerate(axes):
+    for category, axes in scale_order.items():
+        horizontal_sum, horizontal_count = 0, 0
+        vertical_sum, vertical_count = 0, 0
+
+        for index, (axis, dimension) in enumerate(axes):
             first_percent = int(request.args.get(f"{category[0]}{index}", 50))
             second_percent = round(100 - first_percent, 1)
             difference = abs(first_percent - second_percent)
@@ -92,7 +100,17 @@ def results():
             scales.append({"axis": axis, "1st": first_ideology, "2nd": second_ideology,
                            "1st%": first_percent, "2nd%": second_percent, "label": label})
 
-    return render_template("results.html", scales=scales, colors=colors)
+            if dimension == 0:
+                horizontal_sum += second_percent * 0.02 - 1
+                horizontal_count += 1
+
+            elif dimension == 1:
+                vertical_sum += first_percent * 0.02 - 1
+                vertical_count += 1
+
+        coordinates.append({"category": category, "x": horizontal_sum / horizontal_count, "y": vertical_sum / vertical_count})
+
+    return render_template("results.html", scales=scales, colors=colors, planes=coordinates)
 
 if __name__ == "__main__":
    app.run(debug=True)
