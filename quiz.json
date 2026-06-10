@@ -43,10 +43,10 @@
   },
   "Social Issues": {
     "Pro-Racial Equity vs Pro-Status Quo": {
-      "Systemic racism is **not** a problem in my nation.": 0.5,
+      "Systemic racism is a problem in my nation.": -0.5,
       "Employers should make the workforce as diverse as possible.": -0.5,
       "Power in society should be radically redistributed towards historically discriminated groups.": -1,
-      "Racial discrimination is **not** an issue at all in my nation.": 1,
+      "Racial discrimination is not an issue at all in my nation.": 1,
       "color1": "#7B3AEC",
       "color2": "#6C7280",
       "axis": 0

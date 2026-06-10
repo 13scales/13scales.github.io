@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Political Quiz</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <div class="sticky-bar">
@@ -53,7 +53,7 @@
     </form>
   </div>
 
-  <script src="/static/script.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
   <div id="scale-order" data-value='{{ scale_order | tojson }}' hidden></div>
   <script>
     const scaleOrder = JSON.parse(document.getElementById('scale-order').dataset.value);
@@ -93,7 +93,7 @@
         });
       }
 
-      window.location.href = '/results/?' + params.toString();
+      window.location.href = '../results/?' + params.toString();
     });
   </script>
 </body>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Results</title>
-  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
   <style>
@@ -154,7 +154,7 @@
     {% endfor %}
 
     <div class="retake-row">
-      <a href="/quiz" class="btn-start">Retake Quiz</a>
+      <a href="{{ url_for('quiz') }}" class="btn-start">Retake Quiz</a>
     </div>
   </div>
   <script>
