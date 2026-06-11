@@ -60,9 +60,9 @@
       "color2": "#3BBAEF",
       "axis": 0
     },
-    "Multiculturalism vs Nativism": {
-      "My nation's culture should remain predominant.": 0.5,
-      "A pathway to citizenship should be given for undocumented immigrants.": -0.5,
+    "Open Borders vs Closed Borders": {
+      "Immigration is overwhelming my nation right now.": 0.5,
+      "Immigration enriches my nation’s culture.": -0.5,
       "Immigrants that are undocumented deserve the same rights as born citizens.": -1,
       "My nation needs to stop immigration for some time.": 1,
       "color1": "#0E7B5B",
@@ -86,8 +86,8 @@
       "axis": 0
     },
     "Critic vs Loyalist": {
-      "Schools should have a curriculum that makes students think more highly of America.": 0.5,
-      "Schools should avoid teaching anything that might make students think negatively about America.": 1,
+      "Schools should have a curriculum that makes students think more highly of my nation.": 0.5,
+      "Schools should avoid teaching anything that might make students think negatively about my nation.": 1,
       "Schools should promote teaching social justice over teaching subjects like math.": -1,
       "color1": "#991B1C",
       "color2": "#C0192B",
