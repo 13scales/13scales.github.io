@@ -263,7 +263,7 @@
         <a href="../quiz/" class="btn-start">Retake Quiz</a>
       </div>
     </div>
-    <div id="scale-order" data-value='{{ scale_order | tojson }}' hidden></div>
+    <div id="scale-order" data-value="{{ scale_order | tojson }}" hidden></div>
     <script src="{{ url_for('static', filename='results.js') }}"></script>
   </body>
 </html>
