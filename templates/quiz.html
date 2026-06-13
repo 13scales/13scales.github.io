@@ -67,8 +67,11 @@
         </div>
       </form>
     </div>
-
-    <div id="scale-order" data-value="{{ scale_order | tojson }}" hidden></div>
+    <div
+      id="scale-order"
+      data-value="{{ scale_order | tojson | forceescape }}"
+      hidden
+    ></div>
     <script src="{{ url_for('static', filename='quiz.js') }}"></script>
   </body>
 </html>
