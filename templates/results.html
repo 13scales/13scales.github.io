@@ -10,6 +10,55 @@
     />
   </head>
   <body>
+    <div class="sticky-bar results-sticky-bar">
+      <button class="btn-copy" id="btn-copy" onclick="copyResults()">Copy Results</button>
+      <span>13 Scales</span>
+    </div>
+    <style>
+      .results-sticky-bar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+      .btn-copy {
+        position: absolute;
+        left: 1.5rem;
+        background: transparent;
+        border: 1.5px solid var(--border);
+        color: var(--text);
+        font-size: 0.82rem;
+        font-weight: 600;
+        padding: 0.35rem 0.85rem;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.15s, color 0.15s, border-color 0.15s;
+        white-space: nowrap;
+      }
+      .btn-copy:hover {
+        background: var(--blue);
+        color: #fff;
+        border-color: var(--blue);
+      }
+      .btn-copy.copied {
+        background: #16a34a;
+        color: #fff;
+        border-color: #16a34a;
+      }
+    </style>
+    <script>
+      function copyResults() {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          const btn = document.getElementById('btn-copy');
+          btn.textContent = 'Copied!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = 'Copy Results';
+            btn.classList.remove('copied');
+          }, 2000);
+        });
+      }
+    </script>
     <style>
       .planes-section {
         margin-bottom: 2rem;
@@ -127,10 +176,11 @@
       <h1 class="results-title">You are/support:</h1>
 
       <div class="planes-section">
+        {% set plane_items = planes.items() | list %}
         <div class="planes-row">
-          {% for plane in planes[:2] %}
+          {% for category, data in plane_items[:2] %}
           <div class="plane-box">
-            <div class="plane-title">{{ plane.category }}</div>
+            <div class="plane-title">{{ category }}</div>
             <div class="plane-outer">
               <span class="plane-dir">Up</span>
               <div class="plane-middle">
@@ -138,8 +188,8 @@
                 <svg
                   class="plane-svg"
                   viewBox="0 0 180 180"
-                  data-x="{{ plane.x }}"
-                  data-y="{{ plane.y }}"
+                  data-x="{{ data.x }}"
+                  data-y="{{ data.y }}"
                 >
                   <line
                     x1="90"
@@ -147,16 +197,16 @@
                     x2="90"
                     y2="180"
                     stroke="#e5e7eb"
-                    stroke-width="1.5"
-                  />
+                    stroke-width="1.5">
+                  </line>
                   <line
                     x1="0"
                     y1="90"
                     x2="180"
                     y2="90"
                     stroke="#e5e7eb"
-                    stroke-width="1.5"
-                  />
+                    stroke-width="1.5">
+                  </line>
                   <circle
                     class="plane-dot"
                     cx="90"
@@ -164,8 +214,8 @@
                     r="6"
                     fill="#3b82f6"
                     stroke="#fff"
-                    stroke-width="2"
-                  />
+                    stroke-width="2">
+                  </circle>
                 </svg>
                 <span class="plane-dir right">Right</span>
               </div>
@@ -174,10 +224,10 @@
           </div>
           {% endfor %}
         </div>
-        {% if planes|length > 2 %}
+        {% if plane_items|length > 2 %}
         <div class="planes-row">
           <div class="plane-box">
-            <div class="plane-title">{{ planes[2].category }}</div>
+            <div class="plane-title">{{ plane_items[2][0] }}</div>
             <div class="plane-outer">
               <span class="plane-dir">Up</span>
               <div class="plane-middle">
@@ -185,8 +235,8 @@
                 <svg
                   class="plane-svg"
                   viewBox="0 0 180 180"
-                  data-x="{{ planes[2].x }}"
-                  data-y="{{ planes[2].y }}"
+                  data-x="{{ plane_items[2][1].x }}"
+                  data-y="{{ plane_items[2][1].y }}"
                 >
                   <line
                     x1="90"
@@ -194,16 +244,16 @@
                     x2="90"
                     y2="180"
                     stroke="#e5e7eb"
-                    stroke-width="1.5"
-                  />
+                    stroke-width="1.5">
+                  </line>
                   <line
                     x1="0"
                     y1="90"
                     x2="180"
                     y2="90"
                     stroke="#e5e7eb"
-                    stroke-width="1.5"
-                  />
+                    stroke-width="1.5">
+                  </line>
                   <circle
                     class="plane-dot"
                     cx="90"
@@ -211,8 +261,9 @@
                     r="6"
                     fill="#3b82f6"
                     stroke="#fff"
-                    stroke-width="2"
-                  />
+                    stroke-width="2">
+
+                  </circle>
                 </svg>
                 <span class="plane-dir right">Right</span>
               </div>
