@@ -1,6 +1,6 @@
 import json
 import random
-from collections import defaultdict, namedtuple
+from collections import defaultdict
 from flask import Flask, render_template, request, send_from_directory
 
 app = Flask(__name__)
@@ -21,89 +21,6 @@ with open("quiz.json") as file:
             colors.append((subquestions["color1"], subquestions["color2"]))
             scale_order[category].append((scale, subquestions["axis"]))
 
-# Economic = left/right social = left/right socioeconomic = up/down foreignH = left/right foreignV = up/down V = up/down
-Leaning = namedtuple("Leaning", ["economic", "social", "socioeconomic", "foreignH", "foreignV", "V"])
-
-# Just like sign bits: 0 = positive/0 (right/down), 1 = negative (left/up)
-ideologies = {
-    # Traditionalist Conservatism: econ=R, soc=R, SE=up, foreignV=up; foreignH+V free
-    Leaning(economic=0, social=0, socioeconomic=1, foreignH=0, foreignV=1, V=0): "Traditionalist Conservatism",
-    Leaning(economic=0, social=0, socioeconomic=1, foreignH=0, foreignV=1, V=1): "Traditionalist Conservatism",
-    Leaning(economic=0, social=0, socioeconomic=1, foreignH=1, foreignV=1, V=0): "Traditionalist Conservatism",
-    Leaning(economic=0, social=0, socioeconomic=1, foreignH=1, foreignV=1, V=1): "Traditionalist Conservatism",
-    # Paleoconservatism: econ=R, soc=R, SE=up, foreignV=down; foreignH+V free
-    Leaning(economic=0, social=0, socioeconomic=1, foreignH=0, foreignV=0, V=0): "Paleoconservatism",
-    Leaning(economic=0, social=0, socioeconomic=1, foreignH=0, foreignV=0, V=1): "Paleoconservatism",
-    Leaning(economic=0, social=0, socioeconomic=1, foreignH=1, foreignV=0, V=0): "Paleoconservatism",
-    Leaning(economic=0, social=0, socioeconomic=1, foreignH=1, foreignV=0, V=1): "Paleoconservatism",
-    # Neoconservatism: econ=R, soc=R, SE=down, foreignV=up; foreignH+V free
-    Leaning(economic=0, social=0, socioeconomic=0, foreignH=0, foreignV=1, V=0): "Neoconservatism",
-    Leaning(economic=0, social=0, socioeconomic=0, foreignH=0, foreignV=1, V=1): "Neoconservatism",
-    Leaning(economic=0, social=0, socioeconomic=0, foreignH=1, foreignV=1, V=0): "Neoconservatism",
-    Leaning(economic=0, social=0, socioeconomic=0, foreignH=1, foreignV=1, V=1): "Neoconservatism",
-    # Right-Libertarianism: econ=R, soc=R, SE=down, foreignV=down; foreignH+V free
-    Leaning(economic=0, social=0, socioeconomic=0, foreignH=0, foreignV=0, V=0): "Right-Libertarianism",
-    Leaning(economic=0, social=0, socioeconomic=0, foreignH=0, foreignV=0, V=1): "Right-Libertarianism",
-    Leaning(economic=0, social=0, socioeconomic=0, foreignH=1, foreignV=0, V=0): "Right-Libertarianism",
-    Leaning(economic=0, social=0, socioeconomic=0, foreignH=1, foreignV=0, V=1): "Right-Libertarianism",
-    # Neoclassical Liberalism: econ=R, soc=L, SE=up, foreignV=down; foreignH+V free
-    Leaning(economic=0, social=1, socioeconomic=1, foreignH=0, foreignV=0, V=0): "Neoclassical Liberalism",
-    Leaning(economic=0, social=1, socioeconomic=1, foreignH=0, foreignV=0, V=1): "Neoclassical Liberalism",
-    Leaning(economic=0, social=1, socioeconomic=1, foreignH=1, foreignV=0, V=0): "Neoclassical Liberalism",
-    Leaning(economic=0, social=1, socioeconomic=1, foreignH=1, foreignV=0, V=1): "Neoclassical Liberalism",
-    # Neoliberalism: econ=R, soc=L, SE=up, foreignV=up; foreignH+V free
-    Leaning(economic=0, social=1, socioeconomic=1, foreignH=0, foreignV=1, V=0): "Neoliberalism",
-    Leaning(economic=0, social=1, socioeconomic=1, foreignH=0, foreignV=1, V=1): "Neoliberalism",
-    Leaning(economic=0, social=1, socioeconomic=1, foreignH=1, foreignV=1, V=0): "Neoliberalism",
-    Leaning(economic=0, social=1, socioeconomic=1, foreignH=1, foreignV=1, V=1): "Neoliberalism",
-    # Neolibertarianism: econ=R, soc=L, SE=down, foreignV=up; foreignH+V free
-    Leaning(economic=0, social=1, socioeconomic=0, foreignH=0, foreignV=1, V=0): "Neolibertarianism",
-    Leaning(economic=0, social=1, socioeconomic=0, foreignH=0, foreignV=1, V=1): "Neolibertarianism",
-    Leaning(economic=0, social=1, socioeconomic=0, foreignH=1, foreignV=1, V=0): "Neolibertarianism",
-    Leaning(economic=0, social=1, socioeconomic=0, foreignH=1, foreignV=1, V=1): "Neolibertarianism",
-    # Libertarianism: econ=R, soc=L, SE=down, foreignV=down; foreignH+V free
-    Leaning(economic=0, social=1, socioeconomic=0, foreignH=0, foreignV=0, V=0): "Libertarianism",
-    Leaning(economic=0, social=1, socioeconomic=0, foreignH=0, foreignV=0, V=1): "Libertarianism",
-    Leaning(economic=0, social=1, socioeconomic=0, foreignH=1, foreignV=0, V=0): "Libertarianism",
-    Leaning(economic=0, social=1, socioeconomic=0, foreignH=1, foreignV=0, V=1): "Libertarianism",
-    # Paternalistic Conservatism: econ=L, soc=R, V=up; SE+foreignH+foreignV free
-    Leaning(economic=1, social=0, socioeconomic=0, foreignH=0, foreignV=0, V=1): "Paternalistic Conservatism",
-    Leaning(economic=1, social=0, socioeconomic=0, foreignH=0, foreignV=1, V=1): "Paternalistic Conservatism",
-    Leaning(economic=1, social=0, socioeconomic=0, foreignH=1, foreignV=0, V=1): "Paternalistic Conservatism",
-    Leaning(economic=1, social=0, socioeconomic=0, foreignH=1, foreignV=1, V=1): "Paternalistic Conservatism",
-    Leaning(economic=1, social=0, socioeconomic=1, foreignH=0, foreignV=0, V=1): "Paternalistic Conservatism",
-    Leaning(economic=1, social=0, socioeconomic=1, foreignH=0, foreignV=1, V=1): "Paternalistic Conservatism",
-    Leaning(economic=1, social=0, socioeconomic=1, foreignH=1, foreignV=0, V=1): "Paternalistic Conservatism",
-    Leaning(economic=1, social=0, socioeconomic=1, foreignH=1, foreignV=1, V=1): "Paternalistic Conservatism",
-    # Right-Liberalism: econ=L, soc=R, V=down; SE+foreignH+foreignV free
-    Leaning(economic=1, social=0, socioeconomic=0, foreignH=0, foreignV=0, V=0): "Right-Liberalism",
-    Leaning(economic=1, social=0, socioeconomic=0, foreignH=0, foreignV=1, V=0): "Right-Liberalism",
-    Leaning(economic=1, social=0, socioeconomic=0, foreignH=1, foreignV=0, V=0): "Right-Liberalism",
-    Leaning(economic=1, social=0, socioeconomic=0, foreignH=1, foreignV=1, V=0): "Right-Liberalism",
-    Leaning(economic=1, social=0, socioeconomic=1, foreignH=0, foreignV=0, V=0): "Right-Liberalism",
-    Leaning(economic=1, social=0, socioeconomic=1, foreignH=0, foreignV=1, V=0): "Right-Liberalism",
-    Leaning(economic=1, social=0, socioeconomic=1, foreignH=1, foreignV=0, V=0): "Right-Liberalism",
-    Leaning(economic=1, social=0, socioeconomic=1, foreignH=1, foreignV=1, V=0): "Right-Liberalism",
-    # Social Democracy: econ=L, soc=L, foreignH=L, V=up; SE+foreignV free
-    Leaning(economic=1, social=1, socioeconomic=0, foreignH=1, foreignV=0, V=1): "Social Democracy",
-    Leaning(economic=1, social=1, socioeconomic=0, foreignH=1, foreignV=1, V=1): "Social Democracy",
-    Leaning(economic=1, social=1, socioeconomic=1, foreignH=1, foreignV=0, V=1): "Social Democracy",
-    Leaning(economic=1, social=1, socioeconomic=1, foreignH=1, foreignV=1, V=1): "Social Democracy",
-    # Modern Liberalism: econ=L, soc=L, foreignH=R, V=up; SE+foreignV free
-    Leaning(economic=1, social=1, socioeconomic=0, foreignH=0, foreignV=0, V=1): "Modern Liberalism",
-    Leaning(economic=1, social=1, socioeconomic=0, foreignH=0, foreignV=1, V=1): "Modern Liberalism",
-    Leaning(economic=1, social=1, socioeconomic=1, foreignH=0, foreignV=0, V=1): "Modern Liberalism",
-    Leaning(economic=1, social=1, socioeconomic=1, foreignH=0, foreignV=1, V=1): "Modern Liberalism",
-    # Left-Libertarianism: econ=L, soc=L, V=down; SE+foreignH+foreignV free
-    Leaning(economic=1, social=1, socioeconomic=0, foreignH=0, foreignV=0, V=0): "Left-Libertarianism",
-    Leaning(economic=1, social=1, socioeconomic=0, foreignH=0, foreignV=1, V=0): "Left-Libertarianism",
-    Leaning(economic=1, social=1, socioeconomic=0, foreignH=1, foreignV=0, V=0): "Left-Libertarianism",
-    Leaning(economic=1, social=1, socioeconomic=0, foreignH=1, foreignV=1, V=0): "Left-Libertarianism",
-    Leaning(economic=1, social=1, socioeconomic=1, foreignH=0, foreignV=0, V=0): "Left-Libertarianism",
-    Leaning(economic=1, social=1, socioeconomic=1, foreignH=0, foreignV=1, V=0): "Left-Libertarianism",
-    Leaning(economic=1, social=1, socioeconomic=1, foreignH=1, foreignV=0, V=0): "Left-Libertarianism",
-    Leaning(economic=1, social=1, socioeconomic=1, foreignH=1, foreignV=1, V=0): "Left-Libertarianism",
-}
 
 @app.route("/assets/<path:filename>")
 def serve_assets(filename):
@@ -192,6 +109,7 @@ def results():
         planes=coordinates,
         scale_order=scale_order,
     )
+
 
 if __name__ == "__main__":
     app.run()

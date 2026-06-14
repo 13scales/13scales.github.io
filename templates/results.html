@@ -11,7 +11,9 @@
   </head>
   <body>
     <div class="sticky-bar results-sticky-bar">
-      <button class="btn-copy" id="btn-copy" onclick="copyResults()">Copy Results</button>
+      <button class="btn-copy" id="btn-copy" onclick="copyResults()">
+        Copy Results
+      </button>
       <span>13 Scales</span>
     </div>
     <style>
@@ -32,7 +34,10 @@
         padding: 0.35rem 0.85rem;
         border-radius: 6px;
         cursor: pointer;
-        transition: background 0.15s, color 0.15s, border-color 0.15s;
+        transition:
+          background 0.15s,
+          color 0.15s,
+          border-color 0.15s;
         white-space: nowrap;
       }
       .btn-copy:hover {
@@ -49,12 +54,12 @@
     <script>
       function copyResults() {
         navigator.clipboard.writeText(window.location.href).then(() => {
-          const btn = document.getElementById('btn-copy');
-          btn.textContent = 'Copied!';
-          btn.classList.add('copied');
+          const btn = document.getElementById("btn-copy");
+          btn.textContent = "Copied!";
+          btn.classList.add("copied");
           setTimeout(() => {
-            btn.textContent = 'Copy Results';
-            btn.classList.remove('copied');
+            btn.textContent = "Copy Results";
+            btn.classList.remove("copied");
           }, 2000);
         });
       }
@@ -173,7 +178,19 @@
     </style>
 
     <div class="results-container">
-      <h1 class="results-title">You are/support:</h1>
+      <h1 class="results-title" style="margin-bottom: 0.2rem">Your results</h1>
+      <p
+        style="
+          font-size: 0.7rem;
+          color: var(--muted);
+          text-align: center;
+          margin-top: 0;
+          margin-bottom: 1.75rem;
+        "
+      >
+        *Your ideology may be slightly inaccurate if you are 100% neutral in
+        some aspect(s) of the graphs below.
+      </p>
 
       <div class="planes-section">
         {% set plane_items = planes.items() | list %}
@@ -197,16 +214,16 @@
                     x2="90"
                     y2="180"
                     stroke="#e5e7eb"
-                    stroke-width="1.5">
-                  </line>
+                    stroke-width="1.5"
+                  ></line>
                   <line
                     x1="0"
                     y1="90"
                     x2="180"
                     y2="90"
                     stroke="#e5e7eb"
-                    stroke-width="1.5">
-                  </line>
+                    stroke-width="1.5"
+                  ></line>
                   <circle
                     class="plane-dot"
                     cx="90"
@@ -214,8 +231,8 @@
                     r="6"
                     fill="#3b82f6"
                     stroke="#fff"
-                    stroke-width="2">
-                  </circle>
+                    stroke-width="2"
+                  ></circle>
                 </svg>
                 <span class="plane-dir right">Right</span>
               </div>
@@ -244,16 +261,16 @@
                     x2="90"
                     y2="180"
                     stroke="#e5e7eb"
-                    stroke-width="1.5">
-                  </line>
+                    stroke-width="1.5"
+                  ></line>
                   <line
                     x1="0"
                     y1="90"
                     x2="180"
                     y2="90"
                     stroke="#e5e7eb"
-                    stroke-width="1.5">
-                  </line>
+                    stroke-width="1.5"
+                  ></line>
                   <circle
                     class="plane-dot"
                     cx="90"
@@ -261,9 +278,8 @@
                     r="6"
                     fill="#3b82f6"
                     stroke="#fff"
-                    stroke-width="2">
-
-                  </circle>
+                    stroke-width="2"
+                  ></circle>
                 </svg>
                 <span class="plane-dir right">Right</span>
               </div>
