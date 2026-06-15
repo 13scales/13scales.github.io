@@ -1,0 +1,180 @@
+{
+  "intro": "13 Scales places you on thirteen political axes as well as three compasses: economic and class, social, and foreign policy. It also gives you an overall ideology and stance. You answer 50 statements, using a slider to show how strongly you agree or disagree with each one.",
+  "stances": [
+    {
+      "name": "Reactionary",
+      "description": "Extremely right-wing. Wants to reverse major social, economic, or cultural changes and restore an earlier order."
+    },
+    {
+      "name": "Conservative",
+      "description": "Strongly right-wing. Defends tradition and opposes further change."
+    },
+    {
+      "name": "Center-Right",
+      "description": "Moderately right-wing. Leans on tradition but accepts gradual reform."
+    },
+    {
+      "name": "Moderate",
+      "description": "Centrist. Balances reform with continuity."
+    },
+    {
+      "name": "Center-Left",
+      "description": "Moderately left-wing. Wants reform but not a fundamental break from established institutions and traditions."
+    },
+    {
+      "name": "Liberal",
+      "description": "Strongly left-wing. Wants broad reforms to change society."
+    },
+    {
+      "name": "Progressive",
+      "description": "Extremely left-wing. Wants fundamental reform of the current order."
+    }
+  ],
+  "ideologies": [
+    {
+      "name": "Traditionalist Conservatism",
+      "description": "Backs a strong government that enforces economic and social conservatism and pursues national interests abroad."
+    },
+    {
+      "name": "Paleoconservatism",
+      "description": "Backs a strong government that enforces economic and social conservatism, but keeps foreign intervention limited."
+    },
+    {
+      "name": "Neoconservatism",
+      "description": "Wants a limited federal government at home while staying economically and socially conservative. Backs strong foreign intervention to advance national interests."
+    },
+    {
+      "name": "Right-Libertarianism",
+      "description": "Wants a limited federal government at home while staying economically and socially conservative. Keeps foreign intervention limited."
+    },
+    {
+      "name": "Social Democracy",
+      "description": "Wants a strong government to reduce social and economic inequality. Backs intervention abroad to promote human rights."
+    },
+    {
+      "name": "Modern Liberalism",
+      "description": "Wants a strong government to reduce social and economic inequality. Backs intervention abroad to advance national interests."
+    },
+    {
+      "name": "Left-Libertarianism",
+      "description": "Wants a limited government but supports social and economic change that reduces inequality. Favors little foreign intervention, focused on human rights."
+    },
+    {
+      "name": "National Liberalism",
+      "description": "Accepts economic hierarchy but supports social liberties and the rights of marginalized racial, gender, and sexual minorities. Uses government to protect those rights and keeps foreign intervention limited."
+    },
+    {
+      "name": "Neoliberalism",
+      "description": "Accepts economic hierarchy but supports social liberties and the rights of marginalized racial, gender, and sexual minorities. Uses government to protect those rights and embraces foreign intervention."
+    },
+    {
+      "name": "Neolibertarianism",
+      "description": "Accepts economic hierarchy but supports social liberties and the rights of marginalized racial, gender, and sexual minorities. Wants limited government at home and an active one abroad."
+    },
+    {
+      "name": "Neoclassical Liberalism",
+      "description": "Accepts economic hierarchy but supports social liberties and the rights of marginalized racial, gender, and sexual minorities. Wants limited government at home and abroad."
+    },
+    {
+      "name": "Paternalistic Conservatism",
+      "description": "Socially conservative, but uses a strong central government to elevate the economically struggling."
+    },
+    {
+      "name": "Conservative Populism",
+      "description": "Socially conservative and hostile to economic elites. Skeptical of strong government."
+    }
+  ],
+  "scales": [
+    {
+      "name": "Populism vs Establishmentarianism",
+      "poles": [
+        "Populism treats educational status as less important.",
+        "Establishmentarianism treats it as more important."
+      ]
+    },
+    {
+      "name": "Equality vs Hierarchy",
+      "poles": [
+        "Equality sees economic divisions as harmful.",
+        "Hierarchy sees them as inevitable."
+      ]
+    },
+    {
+      "name": "Protection vs Free Trade",
+      "poles": [
+        "Protection sees foreign trade as harmful to national interests.",
+        "Free Trade sees it as improving competitiveness."
+      ]
+    },
+    {
+      "name": "Interventionism vs Laissez-Faire",
+      "poles": [
+        "Interventionism favors government involvement in the economy.",
+        "Laissez-Faire opposes it."
+      ]
+    },
+    {
+      "name": "Racial Equality vs Status Quo",
+      "poles": [
+        "Racial Equality sees the current system as bad for historically marginalized racial groups.",
+        "Status Quo sees it as fair."
+      ]
+    },
+    {
+      "name": "Feminism vs Traditionalism",
+      "poles": [
+        "Feminism sees traditional gender norms as oppressive.",
+        "Traditionalism sees them as positive."
+      ]
+    },
+    {
+      "name": "Open Borders vs Closed Borders",
+      "poles": [
+        "Open Borders sees immigration as an asset.",
+        "Closed Borders sees it as a liability."
+      ]
+    },
+    {
+      "name": "Liberty vs Morality",
+      "poles": [
+        "Liberty treats so-called degenerate behavior as a personal right.",
+        "Morality treats it as harmful and needing correction."
+      ]
+    },
+    {
+      "name": "Pro-LGBTQIA+ vs Anti-LGBTQIA+",
+      "poles": [
+        "Pro-LGBTQIA+ supports the community and pushes for greater acceptance.",
+        "Anti-LGBTQIA+ opposes it."
+      ]
+    },
+    {
+      "name": "Critical vs Loyal",
+      "poles": [
+        "Critical sees the nation as fundamentally flawed and wants schools to teach those flaws.",
+        "Loyal sees it as fundamentally great and wants schools to teach that greatness."
+      ]
+    },
+    {
+      "name": "Centralism vs Confederalism",
+      "poles": [
+        "Centralism trusts the federal government to govern best.",
+        "Confederalism trusts state governments."
+      ]
+    },
+    {
+      "name": "Humanitarianism vs Productivism",
+      "poles": [
+        "Humanitarianism says government should promote human rights abroad.",
+        "Productivism says it should promote economic interests."
+      ]
+    },
+    {
+      "name": "Militarism vs Pacifism",
+      "poles": [
+        "Militarism wants a strong military and the will to use it.",
+        "Pacifism wants to cut military intervention down."
+      ]
+    }
+  ]
+}

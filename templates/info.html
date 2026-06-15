@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About 13 Scales</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="sticky-bar bar-nav">
+      <a
+        class="bar-btn left"
+        href="../"
+        onclick="if (history.length > 1) { history.back(); return false; }"
+        >Back to Results</a
+      >
+      <span>13 Scales</span>
+      <a class="bar-btn right" href="../quiz/">Re-take Quiz</a>
+    </div>
+
+    <div class="content-container">
+      <section class="content-section">
+        <h2>What are the stances?</h2>
+        {% for stance in content.stances %}
+        <div class="term-card">
+          <h3>{{ stance.name }}</h3>
+          <p>{{ stance.description }}</p>
+        </div>
+        {% endfor %}
+      </section>
+
+      <section class="content-section">
+        <h2>What are the ideologies?</h2>
+        {% for ideology in content.ideologies %}
+        <div class="term-card">
+          <h3>{{ ideology.name }}</h3>
+          <p>{{ ideology.description }}</p>
+        </div>
+        {% endfor %}
+      </section>
+
+      <section class="content-section">
+        <h2>The thirteen scales</h2>
+        {% for scale in content.scales %}
+        <div class="term-card">
+          <h3>{{ scale.name }}</h3>
+          <ul class="term-poles">
+            {% for pole in scale.poles %}
+            <li>{{ pole }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+      </section>
+    </div>
+  </body>
+</html>

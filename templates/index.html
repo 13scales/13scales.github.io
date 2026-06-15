@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Political Quiz</title>
+    <title>13 Scales</title>
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
@@ -13,11 +13,7 @@
     <div class="landing">
       <div class="landing-card">
         <h1>13 Scales</h1>
-        <p>
-          50 questions across 13 axes. Use the sliders to indicate how much you
-          agree or disagree with each statement. There are no right or wrong
-          answers.
-        </p>
+        <p>{{ content.intro }}</p>
         <ul class="meta-list">
           <li>50 questions</li>
           <li>13 axes</li>
@@ -25,6 +21,25 @@
         </ul>
         <a href="quiz/" class="btn-start">Start Quiz</a>
       </div>
+    </div>
+
+    <div class="content-container">
+      <section class="content-section">
+        <h2>The thirteen scales</h2>
+        {% for scale in content.scales %}
+        <div class="term-card">
+          <h3>{{ scale.name }}</h3>
+          <ul class="term-poles">
+            {% for pole in scale.poles %}
+            <li>{{ pole }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+        <div class="content-cta">
+          <a href="info/" class="btn-start">Stances &amp; ideologies</a>
+        </div>
+      </section>
     </div>
   </body>
 </html>
