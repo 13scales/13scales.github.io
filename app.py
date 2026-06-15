@@ -45,7 +45,7 @@ def quiz():
 @app.route("/results/")
 def results():
     scales = []
-    coordinates = []
+    coordinates = {}
 
     for category, axes in scale_order.items():
         horizontal_sum, horizontal_count = 0, 0
@@ -97,13 +97,10 @@ def results():
                 vertical_sum += first_percent * 0.02 - 1
                 vertical_count += 1
 
-        coordinates.append(
-            {
-                "category": category,
-                "x": horizontal_sum / horizontal_count,
-                "y": vertical_sum / vertical_count,
-            }
-        )
+        coordinates[category] = {
+            "x": horizontal_sum / horizontal_count,
+            "y": vertical_sum / vertical_count,
+        }
 
     return render_template(
         "results.html",
