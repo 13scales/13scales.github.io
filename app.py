@@ -25,8 +25,6 @@ with open("quiz.json") as file:
 with open("content.json") as file:
     content = json.load(file)
 
-# Fail the build loudly if a content section is missing rather than rendering an
-# empty page. content.json is read once at import (freeze) time, never served.
 for section in ("intro", "stances", "ideologies", "scales"):
     if not content.get(section):
         raise ValueError(f"content.json missing or empty section: {section}")

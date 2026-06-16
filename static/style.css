@@ -417,13 +417,55 @@ input[type="range"]::-moz-range-thumb {
   margin-top: 1rem;
 }
 
+.scale-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.scale-row .term-card {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.scale-side-icon {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .scale-side-icon {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.card-note {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.card-note a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card-note a:hover {
+  text-decoration: underline;
+}
+
 /* sticky bar with side buttons (info page, results) */
 
 .bar-nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
 }
 
 .bar-btn {

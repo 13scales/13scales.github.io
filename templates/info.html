@@ -11,17 +11,57 @@
   </head>
   <body>
     <div class="sticky-bar bar-nav">
-      <a
-        class="bar-btn left"
-        href="../"
-        onclick="if (history.length > 1) { history.back(); return false; }"
-        >Back to Results</a
-      >
+      <a class="bar-btn left" id="back-link" href="../">Back to Home Page</a>
       <span>13 Scales</span>
-      <a class="bar-btn right" href="../quiz/">Re-take Quiz</a>
+      <a class="bar-btn right" id="quiz-link" href="../quiz/">Start Quiz</a>
     </div>
+    <script>
+      // Buttons depend on where the user arrived from. Default (direct visit or
+      // from the home page) points back to the home page and to a fresh quiz.
+      // Only when the user came from the results page do they switch to point
+      // back to that specific result and to a re-take.
+      (function () {
+        if (document.referrer.indexOf("/results") === -1) return;
+        var back = document.getElementById("back-link");
+        back.textContent = "Back to Results Page";
+        back.href = "../results/";
+        back.onclick = function () {
+          if (history.length > 1) {
+            history.back();
+            return false;
+          }
+        };
+        document.getElementById("quiz-link").textContent = "Re-Take Quiz";
+      })();
+    </script>
 
     <div class="content-container">
+      <section class="content-section">
+        <h2>The 13 Scales</h2>
+        {% for scale in content.scales %}
+        <div class="scale-row">
+          <img
+            class="scale-side-icon"
+            src="{{ url_for('serve_assets', filename=scale.icons[0]) }}"
+            alt="{{ scale.name.split(' vs ')[0] }}"
+          />
+          <div class="term-card">
+            <h3>{{ scale.name }}</h3>
+            <ul class="term-poles">
+              {% for pole in scale.poles %}
+              <li>{{ pole }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <img
+            class="scale-side-icon"
+            src="{{ url_for('serve_assets', filename=scale.icons[1]) }}"
+            alt="{{ scale.name.split(' vs ')[1] }}"
+          />
+        </div>
+        {% endfor %}
+      </section>
+
       <section class="content-section">
         <h2>What are the stances?</h2>
         {% for stance in content.stances %}
@@ -38,20 +78,6 @@
         <div class="term-card">
           <h3>{{ ideology.name }}</h3>
           <p>{{ ideology.description }}</p>
-        </div>
-        {% endfor %}
-      </section>
-
-      <section class="content-section">
-        <h2>The thirteen scales</h2>
-        {% for scale in content.scales %}
-        <div class="term-card">
-          <h3>{{ scale.name }}</h3>
-          <ul class="term-poles">
-            {% for pole in scale.poles %}
-            <li>{{ pole }}</li>
-            {% endfor %}
-          </ul>
         </div>
         {% endfor %}
       </section>

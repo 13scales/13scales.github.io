@@ -14,32 +14,12 @@
       <div class="landing-card">
         <h1>13 Scales</h1>
         <p>{{ content.intro }}</p>
-        <ul class="meta-list">
-          <li>50 questions</li>
-          <li>13 axes</li>
-          <li>3 categories</li>
-        </ul>
+        <p class="card-note">
+          More information about scales, stances, and ideologies can be found in
+          the <a href="info/">info page</a>.
+        </p>
         <a href="quiz/" class="btn-start">Start Quiz</a>
       </div>
-    </div>
-
-    <div class="content-container">
-      <section class="content-section">
-        <h2>The thirteen scales</h2>
-        {% for scale in content.scales %}
-        <div class="term-card">
-          <h3>{{ scale.name }}</h3>
-          <ul class="term-poles">
-            {% for pole in scale.poles %}
-            <li>{{ pole }}</li>
-            {% endfor %}
-          </ul>
-        </div>
-        {% endfor %}
-        <div class="content-cta">
-          <a href="info/" class="btn-start">Stances &amp; ideologies</a>
-        </div>
-      </section>
     </div>
   </body>
 </html>

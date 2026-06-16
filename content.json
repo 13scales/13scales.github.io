@@ -87,6 +87,7 @@
   "scales": [
     {
       "name": "Populism vs Establishmentarianism",
+      "icons": ["populism.png", "establishmentarianism.png"],
       "poles": [
         "Populism treats educational status as less important.",
         "Establishmentarianism treats it as more important."
@@ -94,6 +95,7 @@
     },
     {
       "name": "Equality vs Hierarchy",
+      "icons": ["equality.png", "hierarchy.png"],
       "poles": [
         "Equality sees economic divisions as harmful.",
         "Hierarchy sees them as inevitable."
@@ -101,6 +103,7 @@
     },
     {
       "name": "Protection vs Free Trade",
+      "icons": ["protection.png", "free-trade.png"],
       "poles": [
         "Protection sees foreign trade as harmful to national interests.",
         "Free Trade sees it as improving competitiveness."
@@ -108,6 +111,7 @@
     },
     {
       "name": "Interventionism vs Laissez-Faire",
+      "icons": ["intervention.png", "laissez-faire-economics.png"],
       "poles": [
         "Interventionism favors government involvement in the economy.",
         "Laissez-Faire opposes it."
@@ -115,6 +119,7 @@
     },
     {
       "name": "Racial Equality vs Status Quo",
+      "icons": ["pro-racial-equity.png", "pro-status-quo.png"],
       "poles": [
         "Racial Equality sees the current system as bad for historically marginalized racial groups.",
         "Status Quo sees it as fair."
@@ -122,6 +127,7 @@
     },
     {
       "name": "Feminism vs Traditionalism",
+      "icons": ["feminism.png", "traditional.png"],
       "poles": [
         "Feminism sees traditional gender norms as oppressive.",
         "Traditionalism sees them as positive."
@@ -129,6 +135,7 @@
     },
     {
       "name": "Open Borders vs Closed Borders",
+      "icons": ["open-borders.png", "closed-borders.png"],
       "poles": [
         "Open Borders sees immigration as an asset.",
         "Closed Borders sees it as a liability."
@@ -136,6 +143,7 @@
     },
     {
       "name": "Liberty vs Morality",
+      "icons": ["liberty.png", "morality.png"],
       "poles": [
         "Liberty treats so-called degenerate behavior as a personal right.",
         "Morality treats it as harmful and needing correction."
@@ -143,6 +151,7 @@
     },
     {
       "name": "Pro-LGBTQIA+ vs Anti-LGBTQIA+",
+      "icons": ["pro-lgbtqia+.png", "anti-lgbtqia+.png"],
       "poles": [
         "Pro-LGBTQIA+ supports the community and pushes for greater acceptance.",
         "Anti-LGBTQIA+ opposes it."
@@ -150,6 +159,7 @@
     },
     {
       "name": "Critical vs Loyal",
+      "icons": ["critic.png", "loyalist.png"],
       "poles": [
         "Critical sees the nation as fundamentally flawed and wants schools to teach those flaws.",
         "Loyal sees it as fundamentally great and wants schools to teach that greatness."
@@ -157,6 +167,7 @@
     },
     {
       "name": "Centralism vs Confederalism",
+      "icons": ["centralism.png", "confederalism.png"],
       "poles": [
         "Centralism trusts the federal government to govern best.",
         "Confederalism trusts state governments."
@@ -164,6 +175,7 @@
     },
     {
       "name": "Humanitarianism vs Productivism",
+      "icons": ["humanitarianism.png", "productivism.png"],
       "poles": [
         "Humanitarianism says government should promote human rights abroad.",
         "Productivism says it should promote economic interests."
@@ -171,6 +183,7 @@
     },
     {
       "name": "Militarism vs Pacifism",
+      "icons": ["militarism.png", "pacifism.png"],
       "poles": [
         "Militarism wants a strong military and the will to use it.",
         "Pacifism wants to cut military intervention down."
