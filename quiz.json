@@ -113,8 +113,8 @@
     },
     "Militarism vs Pacifism": {
       "My nation should reduce foreign military intervention.": 0.5,
-      "My nation should not have a military.": 1,
-      "My nation should use the most dangerous weapons at its disposal more.": -1,
+      "My nation should never intervene militarily in another nation unless we are directly attacked.": 1,
+      "My nation should aggressively intervene around the world to prevent the rise of rival powers.": -1,
       "color1": "#596E2B",
       "color2": "#4A9FBC",
       "axis": 1
