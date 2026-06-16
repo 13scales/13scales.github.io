@@ -22,6 +22,14 @@ with open("quiz.json") as file:
             scale_order[category].append((scale, subquestions["axis"]))
 
 
+with open("content.json") as file:
+    content = json.load(file)
+
+for section in ("intro", "stances", "ideologies", "scales"):
+    if not content.get(section):
+        raise ValueError(f"content.json missing or empty section: {section}")
+
+
 @app.route("/assets/<path:filename>")
 def serve_assets(filename):
     return send_from_directory("assets", filename)
@@ -29,7 +37,12 @@ def serve_assets(filename):
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template("index.html", content=content)
+
+
+@app.route("/info/")
+def info():
+    return render_template("info.html", content=content)
 
 
 @app.route("/quiz/")

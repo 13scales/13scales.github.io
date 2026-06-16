@@ -342,3 +342,160 @@ input[type="range"]::-moz-range-thumb {
   text-align: center;
   margin-top: 2rem;
 }
+
+/* ── Content pages (home extras + info) ──────────────── */
+
+.content-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+.content-intro {
+  color: var(--muted);
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+}
+
+.content-section {
+  margin-bottom: 2.5rem;
+}
+
+.content-section > h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--blue);
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.term-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.term-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.term-card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.term-poles {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.term-poles li {
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.term-poles li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+}
+
+.content-cta {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.scale-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.scale-row .term-card {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.scale-side-icon {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .scale-side-icon {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.card-note {
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.card-note a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card-note a:hover {
+  text-decoration: underline;
+}
+
+/* sticky bar with side buttons (info page, results) */
+
+.bar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bar-btn {
+  position: absolute;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--text);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    border-color 0.15s;
+}
+
+.bar-btn:hover {
+  background: var(--blue);
+  color: #fff;
+  border-color: var(--blue);
+}
+
+.bar-btn.left {
+  left: 1.5rem;
+}
+
+.bar-btn.right {
+  right: 1.5rem;
+}

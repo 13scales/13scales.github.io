@@ -110,11 +110,11 @@ const ideologies = {
   110001: "Right-Libertarianism",
   110100: "Right-Libertarianism",
   110101: "Right-Libertarianism",
-  // Neoclassical Liberalism: econ=R, soc=L, SE=up, foreignV=down; foreignH+V free
-  101000: "Neoclassical Liberalism",
-  101001: "Neoclassical Liberalism",
-  101100: "Neoclassical Liberalism",
-  101101: "Neoclassical Liberalism",
+  // National Liberalism: econ=R, soc=L, SE=up, foreignV=down; foreignH+V free
+  101000: "National Liberalism",
+  101001: "National Liberalism",
+  101100: "National Liberalism",
+  101101: "National Liberalism",
   // Neoliberalism: econ=R, soc=L, SE=up, foreignV=up; foreignH+V free
   101010: "Neoliberalism",
   101011: "Neoliberalism",
@@ -125,11 +125,11 @@ const ideologies = {
   100011: "Neolibertarianism",
   100110: "Neolibertarianism",
   100111: "Neolibertarianism",
-  // Libertarianism: econ=R, soc=L, SE=down, foreignV=down; foreignH+V free
-  100000: "Libertarianism",
-  100001: "Libertarianism",
-  100100: "Libertarianism",
-  100101: "Libertarianism",
+  // Neoclassical Liberalism: econ=R, soc=L, SE=down, foreignV=down; foreignH+V free
+  100000: "Neoclassical Liberalism",
+  100001: "Neoclassical Liberalism",
+  100100: "Neoclassical Liberalism",
+  100101: "Neoclassical Liberalism",
   // Paternalistic Conservatism: econ=L, soc=R, V=up; SE+foreignH+foreignV free
   "010001": "Paternalistic Conservatism",
   "010011": "Paternalistic Conservatism",

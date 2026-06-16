@@ -9,3 +9,5 @@ __pycache__/
 
 # Project-specific
 .claude/
+*.md
+!README.md
