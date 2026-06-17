@@ -446,6 +446,15 @@ input[type="range"]::-moz-range-thumb {
     width: 64px;
     height: 64px;
   }
+
+  .scale-row .term-card {
+    min-width: 0;
+  }
+
+  .scale-row .term-card h3,
+  .scale-row .term-poles li {
+    overflow-wrap: break-word;
+  }
 }
 
 .card-note {
@@ -501,6 +510,11 @@ input[type="range"]::-moz-range-thumb {
   left: 1.5rem;
 }
 
+.bar-btn.left {
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+
 .bar-btn.right {
   right: 1.5rem;
 }
@@ -512,13 +526,13 @@ input[type="range"]::-moz-range-thumb {
 }
 .btn-copy {
   position: absolute;
-  left: 1.5rem;
+  left: 1.25rem;
   background: transparent;
   border: 1.5px solid var(--border);
   color: var(--text);
   font-size: 0.82rem;
   font-weight: 600;
-  padding: 0.35rem 0.85rem;
+  padding: 0.3rem 0.5rem;
   border-radius: 6px;
   cursor: pointer;
   transition:
