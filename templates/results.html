@@ -398,8 +398,24 @@
       else if (horizontalCumulative >= 15) stance = "Liberal";
       else stance = "Progressive";
 
+      // Stance/score overrides that split a base ideology into a variant.
+      const consReac = stance === "Conservative" || stance === "Reactionary";
+      const progressive = stance === "Progressive";
+      const econX = coordinates["Economic and Class Issues"].x;
+      let finalIdeology = ideology;
+      if (consReac && ideology === "Neoconservatism")
+        finalIdeology = "Mesoconservatism";
+      else if (consReac && ideology === "Right-Libertarianism")
+        finalIdeology = "Paleolibertarianism";
+      else if (progressive && ideology === "Social Democracy")
+        finalIdeology = "Socialism";
+      else if (progressive && ideology === "Left-Libertarianism")
+        finalIdeology = "Libertarian Socialism";
+      else if (ideology === "Paternalistic Conservatism" && econX <= -0.5)
+        finalIdeology = "Conservative Socialism";
+
       document.querySelector(".results-title").textContent =
-        `You are ${stance} and support ${ideology}.`;
+        `You are ${stance} and support ${finalIdeology}.`;
 
       document.documentElement.classList.add("results-ready");
     </script>
