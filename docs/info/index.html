@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About 13 Scales</title>
+    <title>13 Scales Info</title>
+    <link rel="icon" type="image/png" href="../static/favicon.png" />
     <link rel="stylesheet" href="../static/style.css" />
   </head>
   <body>
     <div class="sticky-bar bar-nav">
-      <a class="bar-btn left" id="back-link" href="../">Back to Home Page</a>
+      <a class="bar-btn left" id="back-link" href="../">Home Page</a>
       <span>13 Scales</span>
       <a class="bar-btn right" id="quiz-link" href="../quiz/">Start Quiz</a>
     </div>
@@ -19,8 +20,8 @@
       // back to that specific result and to a re-take.
       (function () {
         if (document.referrer.indexOf("/results") === -1) return;
-        var back = document.getElementById("back-link");
-        back.textContent = "Back to Results Page";
+        let back = document.getElementById("back-link");
+        back.textContent = "Back to Results";
         back.href = "../results/";
         back.onclick = function () {
           if (history.length > 1) {
@@ -397,114 +398,158 @@
         <div class="term-card">
           <h3>Traditionalist Conservatism</h3>
           <p>
-            Supports a strong government that enforces economic and social
-            conservatism while pursuing national interests abroad.
+            Endorses an active government that promotes economic and social
+            conservatism as well as national interests abroad.
           </p>
         </div>
 
         <div class="term-card">
           <h3>Paleoconservatism</h3>
           <p>
-            Advocates for a government that upholds economic and social
-            conservatism while keeping foreign intervention minimal.
+            Favors an active government that advances economic and social
+            conservatism while preferring limited foreign intervention.
           </p>
         </div>
 
         <div class="term-card">
           <h3>Neoconservatism</h3>
           <p>
-            Prefers a limited federal government while maintaining economic and
-            social conservatism. Supports strong foreign intervention to advance
-            national interests.
+            Supports a limited federal government domestically while advocating
+            moderate economic and social conservatism, combined with active,
+            strong foreign intervention to promote national interests.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Mesoconservatism</h3>
+          <p>
+            Advocates for strong economic and social conservatism along with
+            active, strong intervention abroad to advance national interests.
           </p>
         </div>
 
         <div class="term-card">
           <h3>Right-Libertarianism</h3>
           <p>
-            Favors a small federal government while maintaining economic and
-            social conservatism. Supports limited foreign intervention.
+            Backs a limited federal government at home while favoring moderate
+            economic and social conservatism, alongside limited foreign
+            intervention.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Paleolibertarianism</h3>
+          <p>
+            Favors a small federal government in domestic affairs while
+            supporting strong economic and social conservatism, alongside
+            limited intervention abroad.
           </p>
         </div>
 
         <div class="term-card">
           <h3>Social Democracy</h3>
           <p>
-            Supports a strong government to reduce social and economic
-            inequality. Advocates for foreign intervention to defend human
-            rights.
+            Favors a strong government to tackle social and economic
+            inequalities, with a foreign policy geared toward promoting human
+            rights through intervention.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Socialism</h3>
+          <p>
+            A strong government addresses the means of production, distributes
+            wealth equally, and seeks to eliminate societal hierarchies. Its
+            foreign policy is geared toward promoting human rights.
           </p>
         </div>
 
         <div class="term-card">
           <h3>Modern Liberalism</h3>
           <p>
-            Relies on a strong government to reduce social and economic
-            inequality. Supports foreign intervention to advance national
-            interests.
+            Supports a strong government to address social and economic
+            inequalities, with a foreign policy geared toward advancing national
+            interests through intervention.
           </p>
         </div>
 
         <div class="term-card">
           <h3>Left-Libertarianism</h3>
           <p>
-            Favors a small government while supporting social and economic
-            changes that reduce inequality. Prefers limited foreign
-            intervention, focused on human rights.
+            Favors a limited government but looks favorably on social and
+            economic changes meant to reduce inequality. Prefers a foreign
+            policy of limited intervention with a human rights focus.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Libertarian Socialism</h3>
+          <p>
+            Rejects both capitalism and government, seeking a socialist economy
+            with individualism as a core tenet.
           </p>
         </div>
 
         <div class="term-card">
           <h3>National Liberalism</h3>
           <p>
-            Accepts economic hierarchy but champions social liberties and the
-            rights of marginalized racial, gender, and sexual minorities.
-            Supports government action to defend those rights while maintaining
-            limited foreign intervention.
+            Favors maintaining economic hierarchies while championing social
+            liberties and the rights of historically oppressed racial, gender,
+            and sexual minorities. Uses the government to address these issues
+            while limiting foreign intervention.
           </p>
         </div>
 
         <div class="term-card">
           <h3>Neoliberalism</h3>
           <p>
-            Accepts economic hierarchy while championing social liberties and
-            the rights of marginalized racial, gender, and sexual minorities.
-            Supports government action to protect those rights and favors
-            foreign intervention.
+            Preserves economic hierarchies while advocating social liberties and
+            the rights of historically oppressed racial, gender, and sexual
+            minorities. Uses the government to address these issues while
+            embracing foreign intervention.
           </p>
         </div>
 
         <div class="term-card">
           <h3>Neolibertarianism</h3>
           <p>
-            Accepts economic hierarchy while supporting social liberties and the
-            rights of marginalized racial, gender, and sexual minorities. Favors
-            a small government domestically but an active role abroad.
+            Accepts existing economic hierarchies while supporting social
+            liberties and the rights of historically oppressed racial, gender,
+            and sexual minorities. Favors a limited government at home and an
+            active one abroad.
           </p>
         </div>
 
         <div class="term-card">
           <h3>Neoclassical Liberalism</h3>
           <p>
-            Accepts economic hierarchy while upholding social liberties and the
-            rights of marginalized racial, gender, and sexual minorities. Favors
-            a small government both domestically and internationally.
+            Upholds economic hierarchies while advocating social liberties and
+            the rights of historically oppressed racial, gender, and sexual
+            minorities. Favors a limited government.
           </p>
         </div>
 
         <div class="term-card">
           <h3>Paternalistic Conservatism</h3>
           <p>
-            Socially conservative but supports a strong central government to
-            assist those struggling economically.
+            Pairs social conservatism with a strong central government that
+            uplifts economically struggling individuals.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Conservative Socialism</h3>
+          <p>
+            Combines a socialist economic system with conservative social
+            policies.
           </p>
         </div>
 
         <div class="term-card">
           <h3>Conservative Populism</h3>
           <p>
-            Socially conservative and opposed to economic elites. Distrusts
-            strong government.
+            Favors social conservatism while voicing hostility toward economic
+            classes, and remains skeptical of a strong government.
           </p>
         </div>
       </section>

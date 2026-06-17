@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Results</title>
+    <title>13 Scales Results</title>
+    <link rel="icon" type="image/png" href="../static/favicon.png" />
     <link rel="stylesheet" href="../static/style.css" />
   </head>
   <body>
@@ -12,42 +13,8 @@
         Copy Results
       </button>
       <span>13 Scales</span>
-      <a class="bar-btn right" href="../info/">More Information</a>
+      <a class="bar-btn right" href="../info/">More Info</a>
     </div>
-    <style>
-      .results-sticky-bar {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .btn-copy {
-        position: absolute;
-        left: 1.5rem;
-        background: transparent;
-        border: 1.5px solid var(--border);
-        color: var(--text);
-        font-size: 0.82rem;
-        font-weight: 600;
-        padding: 0.35rem 0.85rem;
-        border-radius: 6px;
-        cursor: pointer;
-        transition:
-          background 0.15s,
-          color 0.15s,
-          border-color 0.15s;
-        white-space: nowrap;
-      }
-      .btn-copy:hover {
-        background: var(--blue);
-        color: #fff;
-        border-color: var(--blue);
-      }
-      .btn-copy.copied {
-        background: #16a34a;
-        color: #fff;
-        border-color: #16a34a;
-      }
-    </style>
     <script>
       function copyResults() {
         navigator.clipboard.writeText(window.location.href).then(() => {
@@ -61,118 +28,6 @@
         });
       }
     </script>
-    <style>
-      .planes-section {
-        margin-bottom: 2rem;
-      }
-      .planes-row {
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-bottom: 2rem;
-      }
-      .plane-box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.4rem;
-      }
-      .plane-title {
-        font-size: 0.95rem;
-        font-weight: 700;
-        color: var(--text);
-        text-align: center;
-      }
-      .plane-outer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.2rem;
-      }
-      .plane-middle {
-        display: flex;
-        align-items: center;
-        gap: 0.35rem;
-      }
-      .plane-dir {
-        font-size: 0.72rem;
-        font-weight: 600;
-        color: var(--muted);
-        user-select: none;
-      }
-      .plane-dir.left,
-      .plane-dir.right {
-        width: 2.2rem;
-        text-align: center;
-      }
-      .plane-svg {
-        width: 180px;
-        height: 180px;
-        background: var(--card);
-        border-radius: 8px;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
-        overflow: visible;
-      }
-      .bar-with-icons {
-        display: flex;
-        align-items: center;
-        gap: 0;
-      }
-      .bar-with-icons .bar-track {
-        flex: 1;
-        border-radius: 0;
-        position: relative;
-        overflow: visible;
-      }
-      .scale-icon {
-        width: 120px;
-        height: 120px;
-        object-fit: contain;
-        flex-shrink: 0;
-      }
-      .bar-with-icons .scale-icon:first-child {
-        object-position: right center;
-      }
-      .bar-with-icons .scale-icon:last-child {
-        object-position: left center;
-      }
-      .bar-pct {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        color: #fff;
-        font-size: 1.5rem;
-        font-weight: 600;
-        pointer-events: none;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-      }
-      .bar-pct.pct-left {
-        left: 0.5rem;
-      }
-      .bar-pct.pct-right {
-        right: 0.5rem;
-      }
-
-      @media (max-width: 600px) {
-        .planes-row {
-          flex-wrap: wrap;
-          gap: 1rem;
-        }
-        .scale-icon {
-          width: 64px;
-          height: 64px;
-        }
-        .bar-track {
-          height: 56px;
-        }
-        .bar-pct {
-          font-size: 1rem;
-        }
-        .axis-label {
-          font-size: 1.25rem;
-        }
-      }
-    </style>
 
     <div class="results-container">
       <h1 class="results-title" style="margin-bottom: 0.2rem">Your results</h1>
@@ -594,6 +449,230 @@
       data-value="{&#34;Economic and Class Issues&#34;: [[&#34;Populism vs Establishmentarianism&#34;, -1], [&#34;Equality vs Hierarchy&#34;, 0], [&#34;Protection vs Free-Trade&#34;, 1], [&#34;Intervention vs Laissez-Faire Economics&#34;, 1]], &#34;Social Issues&#34;: [[&#34;Pro-Racial Equity vs Pro-Status Quo&#34;, 0], [&#34;Feminism vs Traditional&#34;, 0], [&#34;Open Borders vs Closed Borders&#34;, 0], [&#34;Liberty vs Morality&#34;, 0], [&#34;Pro-LGBTQIA+ vs Anti-LGBTQIA+&#34;, 0], [&#34;Critic vs Loyalist&#34;, 0], [&#34;Centralism vs Confederalism&#34;, 1]], &#34;Foreign Policy&#34;: [[&#34;Humanitarianism vs Productivism&#34;, 0], [&#34;Militarism vs Pacifism&#34;, 1]]}"
       hidden
     ></div>
-    <script src="../static/results.js"></script>
+    <script>
+      document.querySelectorAll("[data-w]").forEach((el) => {
+        el.style.width = el.dataset.w + "%";
+        if (el.dataset.color) el.style.backgroundColor = el.dataset.color;
+      });
+      document.querySelectorAll(".plane-svg").forEach((svg) => {
+        const x = parseFloat(svg.dataset.x);
+        const y = parseFloat(svg.dataset.y);
+        const cx = ((x + 1) / 2) * 180;
+        const cy = ((1 - y) / 2) * 180;
+        svg.querySelector(".plane-dot").setAttribute("cx", cx.toString());
+        svg.querySelector(".plane-dot").setAttribute("cy", cy.toString());
+      });
+
+      // Static-site layer: the frozen page is baked at 50/50 defaults, so re-render from URL params
+      const scaleOrder = JSON.parse(
+        document.getElementById("scale-order").dataset.value,
+      );
+      const params = new URLSearchParams(window.location.search);
+
+      const axisResults = document.querySelectorAll(".axis-result");
+      const planeSvgs = document.querySelectorAll(".plane-svg");
+      let row = 0,
+        plane = 0;
+
+      const coordinates = {};
+
+      for (const [category, axes] of Object.entries(scaleOrder)) {
+        let hSum = 0,
+          hCount = 0,
+          vSum = 0,
+          vCount = 0;
+
+        axes.forEach(([axis, dimension], index) => {
+          const first = parseInt(params.get(category[0] + index) || "50");
+          const second = 100 - first;
+          const difference = Math.abs(first - second);
+          const [firstIdeology, secondIdeology] = axis.split(" vs ");
+
+          let label;
+          if (difference === 0) {
+            label = `As much ${firstIdeology} as ${secondIdeology}`;
+          } else {
+            const intensity =
+              difference < 15
+                ? "Slight"
+                : difference < 40
+                  ? "Moderate"
+                  : difference < 70
+                    ? "Strong"
+                    : "Extreme";
+            label = `${intensity} ${first > second ? firstIdeology : secondIdeology}`;
+          }
+
+          const result = axisResults[row++];
+          result.querySelector(".axis-label").textContent = label;
+          const barLeft = result.querySelector(".bar-left");
+          barLeft.style.width = first + "%";
+          barLeft.style.borderRight =
+            first === 0 || first === 100 ? "none" : "";
+          result.querySelector(".bar-right").style.width = second + "%";
+
+          const pctLeft = result.querySelector(".pct-left");
+          const pctRight = result.querySelector(".pct-right");
+          if (pctLeft) {
+            pctLeft.textContent = first + "%";
+            pctLeft.style.display = first >= 7 ? "" : "none";
+          }
+          if (pctRight) {
+            pctRight.textContent = second + "%";
+            pctRight.style.display = second >= 7 ? "" : "none";
+          }
+
+          if (dimension === 0) {
+            hSum += second * 0.02 - 1;
+            hCount++;
+          } else if (dimension === 1) {
+            vSum += first * 0.02 - 1;
+            vCount++;
+          }
+        });
+
+        const x = hSum / hCount;
+        const y = vSum / vCount;
+        coordinates[category] = { x, y };
+
+        const dot = planeSvgs[plane++].querySelector(".plane-dot");
+        dot.setAttribute("cx", ((x + 1) / 2) * 180);
+        dot.setAttribute("cy", ((1 - y) / 2) * 180);
+      }
+
+      // 1 = right/up, 0 = left/down (0+ is considered right/up)
+      // key order: economic, social, socioeconomic, foreignH, foreignV, V
+      const ideologies = {
+        // Traditionalist Conservatism: econ=R, soc=R, SE=up, foreignV=up; foreignH+V free
+        111010: "Traditionalist Conservatism",
+        111011: "Traditionalist Conservatism",
+        111110: "Traditionalist Conservatism",
+        111111: "Traditionalist Conservatism",
+        // Paleoconservatism: econ=R, soc=R, SE=up, foreignV=down; foreignH+V free
+        111000: "Paleoconservatism",
+        111001: "Paleoconservatism",
+        111100: "Paleoconservatism",
+        111101: "Paleoconservatism",
+        // Neoconservatism: econ=R, soc=R, SE=down, foreignV=up; foreignH+V free
+        110010: "Neoconservatism",
+        110011: "Neoconservatism",
+        110110: "Neoconservatism",
+        110111: "Neoconservatism",
+        // Right-Libertarianism: econ=R, soc=R, SE=down, foreignV=down; foreignH+V free
+        110000: "Right-Libertarianism",
+        110001: "Right-Libertarianism",
+        110100: "Right-Libertarianism",
+        110101: "Right-Libertarianism",
+        // National Liberalism: econ=R, soc=L, SE=up, foreignV=down; foreignH+V free
+        101000: "National Liberalism",
+        101001: "National Liberalism",
+        101100: "National Liberalism",
+        101101: "National Liberalism",
+        // Neoliberalism: econ=R, soc=L, SE=up, foreignV=up; foreignH+V free
+        101010: "Neoliberalism",
+        101011: "Neoliberalism",
+        101110: "Neoliberalism",
+        101111: "Neoliberalism",
+        // Neolibertarianism: econ=R, soc=L, SE=down, foreignV=up; foreignH+V free
+        100010: "Neolibertarianism",
+        100011: "Neolibertarianism",
+        100110: "Neolibertarianism",
+        100111: "Neolibertarianism",
+        // Neoclassical Liberalism: econ=R, soc=L, SE=down, foreignV=down; foreignH+V free
+        100000: "Neoclassical Liberalism",
+        100001: "Neoclassical Liberalism",
+        100100: "Neoclassical Liberalism",
+        100101: "Neoclassical Liberalism",
+        // Paternalistic Conservatism: econ=L, soc=R, V=up; SE+foreignH+foreignV free
+        "010001": "Paternalistic Conservatism",
+        "010011": "Paternalistic Conservatism",
+        "010101": "Paternalistic Conservatism",
+        "010111": "Paternalistic Conservatism",
+        "011001": "Paternalistic Conservatism",
+        "011011": "Paternalistic Conservatism",
+        "011101": "Paternalistic Conservatism",
+        "011111": "Paternalistic Conservatism",
+        // Conservative Populism: econ=L, soc=R, V=down; SE+foreignH+foreignV free
+        "010000": "Conservative Populism",
+        "010010": "Conservative Populism",
+        "010100": "Conservative Populism",
+        "010110": "Conservative Populism",
+        "011000": "Conservative Populism",
+        "011010": "Conservative Populism",
+        "011100": "Conservative Populism",
+        "011110": "Conservative Populism",
+        // Social Democracy: econ=L, soc=L, foreignH=L, V=up; SE+foreignV free
+        "000001": "Social Democracy",
+        "000011": "Social Democracy",
+        "001001": "Social Democracy",
+        "001011": "Social Democracy",
+        // Modern Liberalism: econ=L, soc=L, foreignH=R, V=up; SE+foreignV free
+        "000101": "Modern Liberalism",
+        "000111": "Modern Liberalism",
+        "001101": "Modern Liberalism",
+        "001111": "Modern Liberalism",
+        // Left-Libertarianism: econ=L, soc=L, V=down; SE+foreignH+foreignV free
+        "000000": "Left-Libertarianism",
+        "000010": "Left-Libertarianism",
+        "000100": "Left-Libertarianism",
+        "000110": "Left-Libertarianism",
+        "001000": "Left-Libertarianism",
+        "001010": "Left-Libertarianism",
+        "001100": "Left-Libertarianism",
+        "001110": "Left-Libertarianism",
+      };
+
+      const bit = (b) => (b ? "1" : "0");
+
+      const allY = Object.values(coordinates).reduce((s, c) => s + c.y, 0);
+      const leaning =
+        bit(coordinates["Economic and Class Issues"].x > 0) +
+        bit(coordinates["Social Issues"].x > 0) +
+        bit(
+          coordinates["Economic and Class Issues"].y +
+            coordinates["Social Issues"].y >
+            0,
+        ) +
+        bit(coordinates["Foreign Policy"].x > 0) +
+        bit(coordinates["Foreign Policy"].y > 0) +
+        bit(allY > 0);
+
+      const ideology = ideologies[leaning];
+
+      const horizontalCumulative =
+        ((Object.values(coordinates).reduce((s, c) => s + c.x, 0) / 3 + 1) /
+          2) *
+        100;
+
+      let stance;
+      if (horizontalCumulative >= 85) stance = "Reactionary";
+      else if (horizontalCumulative >= 70) stance = "Conservative";
+      else if (horizontalCumulative >= 55) stance = "Center-Right";
+      else if (horizontalCumulative >= 45) stance = "Moderate";
+      else if (horizontalCumulative >= 30) stance = "Center-Left";
+      else if (horizontalCumulative >= 15) stance = "Liberal";
+      else stance = "Progressive";
+
+      // Stance/score overrides that split a base ideology into a variant.
+      const consReac = stance === "Conservative" || stance === "Reactionary";
+      const progressive = stance === "Progressive";
+      const econX = coordinates["Economic and Class Issues"].x;
+      let finalIdeology = ideology;
+      if (consReac && ideology === "Neoconservatism")
+        finalIdeology = "Mesoconservatism";
+      else if (consReac && ideology === "Right-Libertarianism")
+        finalIdeology = "Paleolibertarianism";
+      else if (progressive && ideology === "Social Democracy")
+        finalIdeology = "Socialism";
+      else if (progressive && ideology === "Left-Libertarianism")
+        finalIdeology = "Libertarian Socialism";
+      else if (ideology === "Paternalistic Conservatism" && econX <= -0.5)
+        finalIdeology = "Conservative Socialism";
+
+      document.querySelector(".results-title").textContent =
+        `You are ${stance} and support ${finalIdeology}.`;
+
+      document.documentElement.classList.add("results-ready");
+    </script>
   </body>
 </html>

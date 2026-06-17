@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About 13 Scales</title>
+    <title>13 Scales Info</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='favicon.png') }}"
+    />
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
@@ -11,7 +16,7 @@
   </head>
   <body>
     <div class="sticky-bar bar-nav">
-      <a class="bar-btn left" id="back-link" href="../">Back to Home Page</a>
+      <a class="bar-btn left" id="back-link" href="../">Home Page</a>
       <span>13 Scales</span>
       <a class="bar-btn right" id="quiz-link" href="../quiz/">Start Quiz</a>
     </div>
@@ -22,8 +27,8 @@
       // back to that specific result and to a re-take.
       (function () {
         if (document.referrer.indexOf("/results") === -1) return;
-        var back = document.getElementById("back-link");
-        back.textContent = "Back to Results Page";
+        let back = document.getElementById("back-link");
+        back.textContent = "Back to Results";
         back.href = "../results/";
         back.onclick = function () {
           if (history.length > 1) {

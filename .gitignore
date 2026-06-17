@@ -11,3 +11,4 @@ __pycache__/
 .claude/
 *.md
 !README.md
+*Zone.Identifier
