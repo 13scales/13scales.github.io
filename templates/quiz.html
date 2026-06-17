@@ -6,8 +6,8 @@
     <title>13 Scales Quiz</title>
     <link
       rel="icon"
-      type="image/svg+xml"
-      href="{{ url_for('static', filename='favicon.svg') }}"
+      type="image/png"
+      href="{{ url_for('static', filename='favicon.png') }}"
     />
     <link
       rel="stylesheet"
@@ -108,7 +108,10 @@
       });
       let questionNumber = 1;
       document.querySelectorAll(".question-text").forEach((p) => {
-        p.textContent = p.textContent.replace(/^\s*\d+\./, questionNumber++ + ".");
+        p.textContent = p.textContent.replace(
+          /^\s*\d+\./,
+          questionNumber++ + ".",
+        );
       });
 
       const scaleOrder = JSON.parse(
@@ -126,34 +129,43 @@
         return bias - 0.5 + response * (bias + 0.5);
       }
 
-      document.getElementById("quiz-form").addEventListener("submit", function (e) {
-        e.preventDefault();
+      document
+        .getElementById("quiz-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
 
-        const axisViews = {};
-        document.querySelectorAll('input[name$=".bias"]').forEach((biasInput) => {
-          const i = biasInput.name.slice(1, -5);
-          const bias = parseFloat(biasInput.value);
-          const category = document.querySelector(`[name="#${i}.category"]`).value;
-          const axis = document.querySelector(`[name="#${i}.axis"]`).value;
-          const response = parseFloat(
-            document.querySelector(`[name="#${i}.response"]`).value,
-          );
-          const key = category + "|" + axis;
-          if (!axisViews[key]) axisViews[key] = [0, 0];
-          axisViews[key][0] += getView(bias, response);
-          axisViews[key][1]++;
+          const axisViews = {};
+          document
+            .querySelectorAll('input[name$=".bias"]')
+            .forEach((biasInput) => {
+              const i = biasInput.name.slice(1, -5);
+              const bias = parseFloat(biasInput.value);
+              const category = document.querySelector(
+                `[name="#${i}.category"]`,
+              ).value;
+              const axis = document.querySelector(`[name="#${i}.axis"]`).value;
+              const response = parseFloat(
+                document.querySelector(`[name="#${i}.response"]`).value,
+              );
+              const key = category + "|" + axis;
+              if (!axisViews[key]) axisViews[key] = [0, 0];
+              axisViews[key][0] += getView(bias, response);
+              axisViews[key][1]++;
+            });
+
+          const params = new URLSearchParams();
+          for (const [category, axes] of Object.entries(scaleOrder)) {
+            axes.forEach(([axis], index) => {
+              const [sum, count] = axisViews[category + "|" + axis] || [0, 1];
+              params.set(
+                category[0] + index,
+                Math.round((1 - sum / count) * 50).toString(),
+              );
+            });
+          }
+
+          window.location.href = "../results/?" + params.toString();
         });
-
-        const params = new URLSearchParams();
-        for (const [category, axes] of Object.entries(scaleOrder)) {
-          axes.forEach(([axis], index) => {
-            const [sum, count] = axisViews[category + "|" + axis] || [0, 1];
-            params.set(category[0] + index, Math.round((1 - sum / count) * 50).toString());
-          });
-        }
-
-        window.location.href = "../results/?" + params.toString();
-      });
     </script>
   </body>
 </html>
