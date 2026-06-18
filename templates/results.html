@@ -398,13 +398,13 @@
 
       let stance, lean;
       if (rightPct > 50) {
-        lean = `${rightPct}% right`;
+        lean = `${rightPct}% Right`;
         if (rightPct >= 85) stance = "Reactionary";
         else if (rightPct >= 70) stance = "Conservative";
         else stance = "Center-Right";
       } else if (rightPct < 50) {
         const leftPct = 100 - rightPct;
-        lean = `${leftPct}% left`;
+        lean = `${leftPct}% Left`;
         if (leftPct >= 85) stance = "Progressive";
         else if (leftPct >= 70) stance = "Liberal";
         else stance = "Center-Left";
