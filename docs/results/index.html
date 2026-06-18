@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>13 Scales Results</title>
+    <link rel="icon" type="image/png" href="../static/favicon.png" />
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+    <div class="sticky-bar results-sticky-bar">
+      <button class="btn-copy" id="btn-copy" onclick="copyResults()">
+        Copy Results
+      </button>
+      <span>13 Scales</span>
+      <a class="bar-btn right" href="../info/">More Info</a>
+    </div>
+    <script>
+      function copyResults() {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          const btn = document.getElementById("btn-copy");
+          btn.textContent = "Copied!";
+          btn.classList.add("copied");
+          setTimeout(() => {
+            btn.textContent = "Copy Results";
+            btn.classList.remove("copied");
+          }, 2000);
+        });
+      }
+    </script>
+
+    <div class="results-container">
+      <h1 class="results-title" style="margin-bottom: 0.2rem">Your results</h1>
+      <p
+        style="
+          font-size: 0.7rem;
+          color: var(--muted);
+          text-align: center;
+          margin-top: 0;
+          margin-bottom: 1.75rem;
+        "
+      >
+        *Your ideology may be slightly inaccurate if you are 100% neutral in
+        some aspect(s) of the graphs below.
+      </p>
+
+      <div class="planes-section">
+        <div class="planes-row">
+          <div class="plane-box">
+            <div class="plane-title">Economic and Class Issues</div>
+            <div class="plane-outer">
+              <span class="plane-dir">Up</span>
+              <div class="plane-middle">
+                <span class="plane-dir left">Left</span>
+                <svg
+                  class="plane-svg"
+                  viewBox="0 0 180 180"
+                  data-x="0.0"
+                  data-y="0.0"
+                >
+                  <line
+                    x1="90"
+                    y1="0"
+                    x2="90"
+                    y2="180"
+                    stroke="#e5e7eb"
+                    stroke-width="1.5"
+                  ></line>
+                  <line
+                    x1="0"
+                    y1="90"
+                    x2="180"
+                    y2="90"
+                    stroke="#e5e7eb"
+                    stroke-width="1.5"
+                  ></line>
+                  <circle
+                    class="plane-dot"
+                    cx="90"
+                    cy="90"
+                    r="6"
+                    fill="#3b82f6"
+                    stroke="#fff"
+                    stroke-width="2"
+                  ></circle>
+                </svg>
+                <span class="plane-dir right">Right</span>
+              </div>
+              <span class="plane-dir">Down</span>
+            </div>
+          </div>
+
+          <div class="plane-box">
+            <div class="plane-title">Social Issues</div>
+            <div class="plane-outer">
+              <span class="plane-dir">Up</span>
+              <div class="plane-middle">
+                <span class="plane-dir left">Left</span>
+                <svg
+                  class="plane-svg"
+                  viewBox="0 0 180 180"
+                  data-x="0.0"
+                  data-y="0.0"
+                >
+                  <line
+                    x1="90"
+                    y1="0"
+                    x2="90"
+                    y2="180"
+                    stroke="#e5e7eb"
+                    stroke-width="1.5"
+                  ></line>
+                  <line
+                    x1="0"
+                    y1="90"
+                    x2="180"
+                    y2="90"
+                    stroke="#e5e7eb"
+                    stroke-width="1.5"
+                  ></line>
+                  <circle
+                    class="plane-dot"
+                    cx="90"
+                    cy="90"
+                    r="6"
+                    fill="#3b82f6"
+                    stroke="#fff"
+                    stroke-width="2"
+                  ></circle>
+                </svg>
+                <span class="plane-dir right">Right</span>
+              </div>
+              <span class="plane-dir">Down</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="planes-row">
+          <div class="plane-box">
+            <div class="plane-title">Foreign Policy</div>
+            <div class="plane-outer">
+              <span class="plane-dir">Up</span>
+              <div class="plane-middle">
+                <span class="plane-dir left">Left</span>
+                <svg
+                  class="plane-svg"
+                  viewBox="0 0 180 180"
+                  data-x="0.0"
+                  data-y="0.0"
+                >
+                  <line
+                    x1="90"
+                    y1="0"
+                    x2="90"
+                    y2="180"
+                    stroke="#e5e7eb"
+                    stroke-width="1.5"
+                  ></line>
+                  <line
+                    x1="0"
+                    y1="90"
+                    x2="180"
+                    y2="90"
+                    stroke="#e5e7eb"
+                    stroke-width="1.5"
+                  ></line>
+                  <circle
+                    class="plane-dot"
+                    cx="90"
+                    cy="90"
+                    r="6"
+                    fill="#3b82f6"
+                    stroke="#fff"
+                    stroke-width="2"
+                  ></circle>
+                </svg>
+                <span class="plane-dir right">Right</span>
+              </div>
+              <span class="plane-dir">Down</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="axis-result">
+        <div class="axis-label">As much Populism as Establishmentarianism</div>
+        <div class="bar-with-icons">
+          <img class="scale-icon" src="../assets/populism.png" alt="Populism" />
+          <div class="bar-track">
+            <div class="bar-left" data-w="50" data-color="#DF5C01"></div>
+            <div class="bar-right" data-w="50" data-color="#1B396B"></div>
+            <span class="bar-pct pct-left">50%</span>
+            <span class="bar-pct pct-right">50%</span>
+          </div>
+          <img
+            class="scale-icon"
+            src="../assets/establishmentarianism.png"
+            alt="Establishmentarianism"
+          />
+        </div>
+      </div>
+
+      <div class="axis-result">
+        <div class="axis-label">As much Equality as Hierarchy</div>
+        <div class="bar-with-icons">
+          <img class="scale-icon" src="../assets/equality.png" alt="Equality" />
+          <div class="bar-track">
+            <div class="bar-left" data-w="50" data-color="#F4C400"></div>
+            <div class="bar-right" data-w="50" data-color="#1C2A51"></div>
+            <span class="bar-pct pct-left">50%</span>
+            <span class="bar-pct pct-right">50%</span>
+          </div>
+          <img
+            class="scale-icon"
+            src="../assets/hierarchy.png"
+            alt="Hierarchy"
+          />
+        </div>
+      </div>
+
+      <div class="axis-result">
+        <div class="axis-label">As much Protection as Free-Trade</div>
+        <div class="bar-with-icons">
+          <img
+            class="scale-icon"
+            src="../assets/protection.png"
+            alt="Protection"
+          />
+          <div class="bar-track">
+            <div class="bar-left" data-w="50" data-color="#2F7D32"></div>
+            <div class="bar-right" data-w="50" data-color="#2B9E5D"></div>
+            <span class="bar-pct pct-left">50%</span>
+            <span class="bar-pct pct-right">50%</span>
+          </div>
+          <img
+            class="scale-icon"
+            src="../assets/free-trade.png"
+            alt="Free-Trade"
+          />
+        </div>
+      </div>
+
+      <div class="axis-result">
+        <div class="axis-label">
+          As much Intervention as Laissez-Faire Economics
+        </div>
+        <div class="bar-with-icons">
+          <img
+            class="scale-icon"
+            src="../assets/intervention.png"
+            alt="Intervention"
+          />
+          <div class="bar-track">
+            <div class="bar-left" data-w="50" data-color="#1D386D"></div>
+            <div class="bar-right" data-w="50" data-color="#2F7D32"></div>
+            <span class="bar-pct pct-left">50%</span>
+            <span class="bar-pct pct-right">50%</span>
+          </div>
+          <img
+            class="scale-icon"
+            src="../assets/laissez-faire-economics.png"
+            alt="Laissez-Faire Economics"
+          />
+        </div>
+      </div>
+
+      <div class="axis-result">
+        <div class="axis-label">
+          As much Pro-Racial Equity as Pro-Status Quo
+        </div>
+        <div class="bar-with-icons">
+          <img
+            class="scale-icon"
+            src="../assets/pro-racial-equity.png"
+            alt="Pro-Racial Equity"
+          />
+          <div class="bar-track">
+            <div class="bar-left" data-w="50" data-color="#7B3AEC"></div>
+            <div class="bar-right" data-w="50" data-color="#6C7280"></div>
+            <span class="bar-pct pct-left">50%</span>
+            <span class="bar-pct pct-right">50%</span>
+          </div>
+          <img
+            class="scale-icon"
+            src="../assets/pro-status-quo.png"
+            alt="Pro-Status Quo"
+          />
+        </div>
+      </div>
+
+      <div class="axis-result">
+        <div class="axis-label">As much Feminism as Traditional</div>
+        <div class="bar-with-icons">
+          <img class="scale-icon" src="../assets/feminism.png" alt="Feminism" />
+          <div class="bar-track">
+            <div class="bar-left" data-w="50" data-color="#E8407B"></div>
+            <div class="bar-right" data-w="50" data-color="#3BBAEF"></div>
+            <span class="bar-pct pct-left">50%</span>
+            <span class="bar-pct pct-right">50%</span>
+          </div>
+          <img
+            class="scale-icon"
+            src="../assets/traditional.png"
+            alt="Traditional"
+          />
+        </div>
+      </div>
+
+      <div class="axis-result">
+        <div class="axis-label">As much Open Borders as Closed Borders</div>
+        <div class="bar-with-icons">
+          <img
+            class="scale-icon"
+            src="../assets/open-borders.png"
+            alt="Open Borders"
+          />
+          <div class="bar-track">
+            <div class="bar-left" data-w="50" data-color="#0E7B5B"></div>
+            <div class="bar-right" data-w="50" data-color="#A0522C"></div>
+            <span class="bar-pct pct-left">50%</span>
+            <span class="bar-pct pct-right">50%</span>
+          </div>
+          <img
+            class="scale-icon"
+            src="../assets/closed-borders.png"
+            alt="Closed Borders"
+          />
+        </div>
+      </div>
+
+      <div class="axis-result">
+        <div class="axis-label">As much Liberty as Morality</div>
+        <div class="bar-with-icons">
+          <img class="scale-icon" src="../assets/liberty.png" alt="Liberty" />
+          <div class="bar-track">
+            <div class="bar-left" data-w="50" data-color="#F4C400"></div>
+            <div class="bar-right" data-w="50" data-color="#B81C1D"></div>
+            <span class="bar-pct pct-left">50%</span>
+            <span class="bar-pct pct-right">50%</span>
+          </div>
+          <img class="scale-icon" src="../assets/morality.png" alt="Morality" />
+        </div>
+      </div>
+
+      <div class="axis-result">
+        <div class="axis-label">As much Pro-LGBTQIA+ as Anti-LGBTQIA+</div>
+        <div class="bar-with-icons">
+          <img
+            class="scale-icon"
+            src="../assets/pro-lgbtqia+.png"
+            alt="Pro-LGBTQIA+"
+          />
+          <div class="bar-track">
+            <div class="bar-left" data-w="50" data-color="#1A0A39"></div>
+            <div class="bar-right" data-w="50" data-color="#3A3A3A"></div>
+            <span class="bar-pct pct-left">50%</span>
+            <span class="bar-pct pct-right">50%</span>
+          </div>
+          <img
+            class="scale-icon"
+            src="../assets/anti-lgbtqia+.png"
+            alt="Anti-LGBTQIA+"
+          />
+        </div>
+      </div>
+
+      <div class="axis-result">
+        <div class="axis-label">As much Critic as Loyalist</div>
+        <div class="bar-with-icons">
+          <img class="scale-icon" src="../assets/critic.png" alt="Critic" />
+          <div class="bar-track">
+            <div class="bar-left" data-w="50" data-color="#991B1C"></div>
+            <div class="bar-right" data-w="50" data-color="#C0192B"></div>
+            <span class="bar-pct pct-left">50%</span>
+            <span class="bar-pct pct-right">50%</span>
+          </div>
+          <img class="scale-icon" src="../assets/loyalist.png" alt="Loyalist" />
+        </div>
+      </div>
+
+      <div class="axis-result">
+        <div class="axis-label">As much Centralism as Confederalism</div>
+        <div class="bar-with-icons">
+          <img
+            class="scale-icon"
+            src="../assets/centralism.png"
+            alt="Centralism"
+          />
+          <div class="bar-track">
+            <div class="bar-left" data-w="50" data-color="#7E22CD"></div>
+            <div class="bar-right" data-w="50" data-color="#2D4A6A"></div>
+            <span class="bar-pct pct-left">50%</span>
+            <span class="bar-pct pct-right">50%</span>
+          </div>
+          <img
+            class="scale-icon"
+            src="../assets/confederalism.png"
+            alt="Confederalism"
+          />
+        </div>
+      </div>
+
+      <div class="axis-result">
+        <div class="axis-label">As much Humanitarianism as Productivism</div>
+        <div class="bar-with-icons">
+          <img
+            class="scale-icon"
+            src="../assets/humanitarianism.png"
+            alt="Humanitarianism"
+          />
+          <div class="bar-track">
+            <div class="bar-left" data-w="50" data-color="#196EA7"></div>
+            <div class="bar-right" data-w="50" data-color="#BD802F"></div>
+            <span class="bar-pct pct-left">50%</span>
+            <span class="bar-pct pct-right">50%</span>
+          </div>
+          <img
+            class="scale-icon"
+            src="../assets/productivism.png"
+            alt="Productivism"
+          />
+        </div>
+      </div>
+
+      <div class="axis-result">
+        <div class="axis-label">As much Militarism as Pacifism</div>
+        <div class="bar-with-icons">
+          <img
+            class="scale-icon"
+            src="../assets/militarism.png"
+            alt="Militarism"
+          />
+          <div class="bar-track">
+            <div class="bar-left" data-w="50" data-color="#596E2B"></div>
+            <div class="bar-right" data-w="50" data-color="#4A9FBC"></div>
+            <span class="bar-pct pct-left">50%</span>
+            <span class="bar-pct pct-right">50%</span>
+          </div>
+          <img class="scale-icon" src="../assets/pacifism.png" alt="Pacifism" />
+        </div>
+      </div>
+
+      <div class="retake-row">
+        <a href="../quiz/" class="btn-start">Retake Quiz</a>
+      </div>
+    </div>
+    <div
+      id="scale-order"
+      data-value="{&#34;Economic and Class Issues&#34;: [[&#34;Populism vs Establishmentarianism&#34;, -1], [&#34;Equality vs Hierarchy&#34;, 0], [&#34;Protection vs Free-Trade&#34;, 1], [&#34;Intervention vs Laissez-Faire Economics&#34;, 1]], &#34;Social Issues&#34;: [[&#34;Pro-Racial Equity vs Pro-Status Quo&#34;, 0], [&#34;Feminism vs Traditional&#34;, 0], [&#34;Open Borders vs Closed Borders&#34;, 0], [&#34;Liberty vs Morality&#34;, 0], [&#34;Pro-LGBTQIA+ vs Anti-LGBTQIA+&#34;, 0], [&#34;Critic vs Loyalist&#34;, 0], [&#34;Centralism vs Confederalism&#34;, 1]], &#34;Foreign Policy&#34;: [[&#34;Humanitarianism vs Productivism&#34;, 0], [&#34;Militarism vs Pacifism&#34;, 1]]}"
+      hidden
+    ></div>
+    <script>
+      document.querySelectorAll("[data-w]").forEach((el) => {
+        el.style.width = el.dataset.w + "%";
+        if (el.dataset.color) el.style.backgroundColor = el.dataset.color;
+      });
+      document.querySelectorAll(".plane-svg").forEach((svg) => {
+        const x = parseFloat(svg.dataset.x);
+        const y = parseFloat(svg.dataset.y);
+        const cx = ((x + 1) / 2) * 180;
+        const cy = ((1 - y) / 2) * 180;
+        svg.querySelector(".plane-dot").setAttribute("cx", cx.toString());
+        svg.querySelector(".plane-dot").setAttribute("cy", cy.toString());
+      });
+
+      // Static-site layer: the frozen page is baked at 50/50 defaults, so re-render from URL params
+      const scaleOrder = JSON.parse(
+        document.getElementById("scale-order").dataset.value,
+      );
+      const params = new URLSearchParams(window.location.search);
+
+      const axisResults = document.querySelectorAll(".axis-result");
+      const planeSvgs = document.querySelectorAll(".plane-svg");
+      let row = 0,
+        plane = 0;
+
+      const coordinates = {};
+
+      // Small screens (results breakpoint = 600px) hide thin slivers sooner
+      const pctThreshold = window.matchMedia("(max-width: 600px)").matches
+        ? 33
+        : 7;
+
+      for (const [category, axes] of Object.entries(scaleOrder)) {
+        let hSum = 0,
+          hCount = 0,
+          vSum = 0,
+          vCount = 0;
+
+        axes.forEach(([axis, dimension], index) => {
+          const first = parseInt(params.get(category[0] + index) || "50");
+          const second = 100 - first;
+          const difference = Math.abs(first - second);
+          const [firstIdeology, secondIdeology] = axis.split(" vs ");
+
+          let label;
+          if (difference === 0) {
+            label = `As much ${firstIdeology} as ${secondIdeology}`;
+          } else {
+            const intensity =
+              difference < 15
+                ? "Slight"
+                : difference < 40
+                  ? "Moderate"
+                  : difference < 70
+                    ? "Strong"
+                    : "Extreme";
+            label = `${intensity} ${first > second ? firstIdeology : secondIdeology}`;
+          }
+
+          const result = axisResults[row++];
+          result.querySelector(".axis-label").textContent = label;
+          const barLeft = result.querySelector(".bar-left");
+          barLeft.style.width = first + "%";
+          barLeft.style.borderRight =
+            first === 0 || first === 100 ? "none" : "";
+          result.querySelector(".bar-right").style.width = second + "%";
+
+          const pctLeft = result.querySelector(".pct-left");
+          const pctRight = result.querySelector(".pct-right");
+          if (pctLeft) {
+            pctLeft.textContent = first + "%";
+            pctLeft.style.display = first >= pctThreshold ? "" : "none";
+          }
+          if (pctRight) {
+            pctRight.textContent = second + "%";
+            pctRight.style.display = second >= pctThreshold ? "" : "none";
+          }
+
+          if (dimension === 0) {
+            hSum += second * 0.02 - 1;
+            hCount++;
+          } else if (dimension === 1) {
+            vSum += first * 0.02 - 1;
+            vCount++;
+          }
+        });
+
+        const x = hSum / hCount;
+        const y = vSum / vCount;
+        coordinates[category] = { x, y };
+
+        const dot = planeSvgs[plane++].querySelector(".plane-dot");
+        dot.setAttribute("cx", ((x + 1) / 2) * 180);
+        dot.setAttribute("cy", ((1 - y) / 2) * 180);
+      }
+
+      // 1 = right/up, 0 = left/down (0+ is considered right/up)
+      // key order: economic, social, socioeconomic, foreignH, foreignV, V
+      const ideologies = {
+        // Traditionalist Conservatism: econ=R, soc=R, SE=up, foreignV=up; foreignH+V free
+        111010: "Traditionalist Conservatism",
+        111011: "Traditionalist Conservatism",
+        111110: "Traditionalist Conservatism",
+        111111: "Traditionalist Conservatism",
+        // Paleoconservatism: econ=R, soc=R, SE=up, foreignV=down; foreignH+V free
+        111000: "Paleoconservatism",
+        111001: "Paleoconservatism",
+        111100: "Paleoconservatism",
+        111101: "Paleoconservatism",
+        // Neoconservatism: econ=R, soc=R, SE=down, foreignV=up; foreignH+V free
+        110010: "Neoconservatism",
+        110011: "Neoconservatism",
+        110110: "Neoconservatism",
+        110111: "Neoconservatism",
+        // Right-Libertarianism: econ=R, soc=R, SE=down, foreignV=down; foreignH+V free
+        110000: "Right-Libertarianism",
+        110001: "Right-Libertarianism",
+        110100: "Right-Libertarianism",
+        110101: "Right-Libertarianism",
+        // National Liberalism: econ=R, soc=L, SE=up, foreignV=down; foreignH+V free
+        101000: "National Liberalism",
+        101001: "National Liberalism",
+        101100: "National Liberalism",
+        101101: "National Liberalism",
+        // Neoliberalism: econ=R, soc=L, SE=up, foreignV=up; foreignH+V free
+        101010: "Neoliberalism",
+        101011: "Neoliberalism",
+        101110: "Neoliberalism",
+        101111: "Neoliberalism",
+        // Neolibertarianism: econ=R, soc=L, SE=down, foreignV=up; foreignH+V free
+        100010: "Neolibertarianism",
+        100011: "Neolibertarianism",
+        100110: "Neolibertarianism",
+        100111: "Neolibertarianism",
+        // Neoclassical Liberalism: econ=R, soc=L, SE=down, foreignV=down; foreignH+V free
+        100000: "Neoclassical Liberalism",
+        100001: "Neoclassical Liberalism",
+        100100: "Neoclassical Liberalism",
+        100101: "Neoclassical Liberalism",
+        // Paternalistic Conservatism: econ=L, soc=R, V=up; SE+foreignH+foreignV free
+        "010001": "Paternalistic Conservatism",
+        "010011": "Paternalistic Conservatism",
+        "010101": "Paternalistic Conservatism",
+        "010111": "Paternalistic Conservatism",
+        "011001": "Paternalistic Conservatism",
+        "011011": "Paternalistic Conservatism",
+        "011101": "Paternalistic Conservatism",
+        "011111": "Paternalistic Conservatism",
+        // Conservative Populism: econ=L, soc=R, V=down; SE+foreignH+foreignV free
+        "010000": "Conservative Populism",
+        "010010": "Conservative Populism",
+        "010100": "Conservative Populism",
+        "010110": "Conservative Populism",
+        "011000": "Conservative Populism",
+        "011010": "Conservative Populism",
+        "011100": "Conservative Populism",
+        "011110": "Conservative Populism",
+        // Social Democracy: econ=L, soc=L, foreignH=L, V=up; SE+foreignV free
+        "000001": "Social Democracy",
+        "000011": "Social Democracy",
+        "001001": "Social Democracy",
+        "001011": "Social Democracy",
+        // Modern Liberalism: econ=L, soc=L, foreignH=R, V=up; SE+foreignV free
+        "000101": "Modern Liberalism",
+        "000111": "Modern Liberalism",
+        "001101": "Modern Liberalism",
+        "001111": "Modern Liberalism",
+        // Left-Libertarianism: econ=L, soc=L, V=down; SE+foreignH+foreignV free
+        "000000": "Left-Libertarianism",
+        "000010": "Left-Libertarianism",
+        "000100": "Left-Libertarianism",
+        "000110": "Left-Libertarianism",
+        "001000": "Left-Libertarianism",
+        "001010": "Left-Libertarianism",
+        "001100": "Left-Libertarianism",
+        "001110": "Left-Libertarianism",
+      };
+
+      const bit = (b) => (b ? "1" : "0");
+
+      const allY = Object.values(coordinates).reduce((s, c) => s + c.y, 0);
+      const leaning =
+        bit(coordinates["Economic and Class Issues"].x > 0) +
+        bit(coordinates["Social Issues"].x > 0) +
+        bit(
+          coordinates["Economic and Class Issues"].y +
+            coordinates["Social Issues"].y >
+            0,
+        ) +
+        bit(coordinates["Foreign Policy"].x > 0) +
+        bit(coordinates["Foreign Policy"].y > 0) +
+        bit(allY > 0);
+
+      const ideology = ideologies[leaning];
+
+      const horizontalCumulative =
+        ((Object.values(coordinates).reduce((s, c) => s + c.x, 0) / 3 + 1) /
+          2) *
+        100;
+
+      const rightPct = Math.round(horizontalCumulative);
+
+      let stance, lean;
+      if (rightPct > 50) {
+        lean = `${rightPct}% Right`;
+        if (rightPct >= 85) stance = "Reactionary";
+        else if (rightPct >= 70) stance = "Conservative";
+        else stance = "Center-Right";
+      } else if (rightPct < 50) {
+        const leftPct = 100 - rightPct;
+        lean = `${leftPct}% Left`;
+        if (leftPct >= 85) stance = "Progressive";
+        else if (leftPct >= 70) stance = "Liberal";
+        else stance = "Center-Left";
+      } else {
+        stance = "Moderate";
+        lean = "50%";
+      }
+
+      // Stance/score overrides that split a base ideology into a variant.
+      const consReac = stance === "Conservative" || stance === "Reactionary";
+      const progressive = stance === "Progressive";
+      const econX = coordinates["Economic and Class Issues"].x;
+      let finalIdeology = ideology;
+      if (consReac && ideology === "Neoconservatism")
+        finalIdeology = "Mesoconservatism";
+      else if (consReac && ideology === "Right-Libertarianism")
+        finalIdeology = "Paleolibertarianism";
+      else if (progressive && ideology === "Social Democracy")
+        finalIdeology = "Socialism";
+      else if (progressive && ideology === "Left-Libertarianism")
+        finalIdeology = "Libertarian Socialism";
+      else if (ideology === "Paternalistic Conservatism" && econX <= -0.5)
+        finalIdeology = "Conservative Socialism";
+
+      document.querySelector(".results-title").textContent =
+        `You are ${stance} (${lean}) and support ${finalIdeology}.`;
+
+      document.documentElement.classList.add("results-ready");
+    </script>
+  </body>
+</html>

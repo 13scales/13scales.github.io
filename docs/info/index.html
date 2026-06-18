@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>13 Scales Info</title>
+    <link rel="icon" type="image/png" href="../static/favicon.png" />
+    <link rel="stylesheet" href="../static/style.css" />
+  </head>
+  <body>
+    <div class="sticky-bar bar-nav">
+      <a class="bar-btn left" id="back-link" href="../">Home Page</a>
+      <span>13 Scales</span>
+      <a class="bar-btn right" id="quiz-link" href="../quiz/">Start Quiz</a>
+    </div>
+    <script>
+      // Buttons depend on where the user arrived from. Default (direct visit or
+      // from the home page) points back to the home page and to a fresh quiz.
+      // Only when the user came from the results page do they switch to point
+      // back to that specific result and to a re-take.
+      (function () {
+        if (document.referrer.indexOf("/results") === -1) return;
+        let back = document.getElementById("back-link");
+        back.textContent = "Back to Results";
+        back.href = "../results/";
+        back.onclick = function () {
+          if (history.length > 1) {
+            history.back();
+            return false;
+          }
+        };
+        document.getElementById("quiz-link").textContent = "Re-Take Quiz";
+      })();
+    </script>
+
+    <div class="content-container">
+      <section class="content-section">
+        <h2>The 13 Scales</h2>
+
+        <div class="scale-row">
+          <img
+            class="scale-side-icon"
+            src="../assets/populism.png"
+            alt="Populism"
+          />
+          <div class="term-card">
+            <h3>Populism vs Establishmentarianism</h3>
+            <ul class="term-poles">
+              <li>Populism places little importance on educational status.</li>
+
+              <li>
+                Establishmentarianism places significant importance on it.
+              </li>
+            </ul>
+          </div>
+          <img
+            class="scale-side-icon"
+            src="../assets/establishmentarianism.png"
+            alt="Establishmentarianism"
+          />
+        </div>
+
+        <div class="scale-row">
+          <img
+            class="scale-side-icon"
+            src="../assets/equality.png"
+            alt="Equality"
+          />
+          <div class="term-card">
+            <h3>Equality vs Hierarchy</h3>
+            <ul class="term-poles">
+              <li>Equality views economic divisions as harmful.</li>
+
+              <li>Hierarchy views them as inevitable.</li>
+            </ul>
+          </div>
+          <img
+            class="scale-side-icon"
+            src="../assets/hierarchy.png"
+            alt="Hierarchy"
+          />
+        </div>
+
+        <div class="scale-row">
+          <img
+            class="scale-side-icon"
+            src="../assets/protection.png"
+            alt="Protection"
+          />
+          <div class="term-card">
+            <h3>Protection vs Free Trade</h3>
+            <ul class="term-poles">
+              <li>
+                Protectionism views foreign trade as harmful to national
+                interests.
+              </li>
+
+              <li>Free trade sees it as enhancing competitiveness.</li>
+            </ul>
+          </div>
+          <img
+            class="scale-side-icon"
+            src="../assets/free-trade.png"
+            alt="Free Trade"
+          />
+        </div>
+
+        <div class="scale-row">
+          <img
+            class="scale-side-icon"
+            src="../assets/intervention.png"
+            alt="Interventionism"
+          />
+          <div class="term-card">
+            <h3>Interventionism vs Laissez-Faire</h3>
+            <ul class="term-poles">
+              <li>
+                Interventionism supports government involvement in the economy.
+              </li>
+
+              <li>Laissez-faire opposes it.</li>
+            </ul>
+          </div>
+          <img
+            class="scale-side-icon"
+            src="../assets/laissez-faire-economics.png"
+            alt="Laissez-Faire"
+          />
+        </div>
+
+        <div class="scale-row">
+          <img
+            class="scale-side-icon"
+            src="../assets/pro-racial-equity.png"
+            alt="Racial Equality"
+          />
+          <div class="term-card">
+            <h3>Racial Equality vs Status Quo</h3>
+            <ul class="term-poles">
+              <li>
+                Racial equality holds that the current system disadvantages
+                historically marginalized racial groups.
+              </li>
+
+              <li>Status quo views the system as fair.</li>
+            </ul>
+          </div>
+          <img
+            class="scale-side-icon"
+            src="../assets/pro-status-quo.png"
+            alt="Status Quo"
+          />
+        </div>
+
+        <div class="scale-row">
+          <img
+            class="scale-side-icon"
+            src="../assets/feminism.png"
+            alt="Feminism"
+          />
+          <div class="term-card">
+            <h3>Feminism vs Traditionalism</h3>
+            <ul class="term-poles">
+              <li>
+                Feminism critiques traditional gender norms as oppressive.
+              </li>
+
+              <li>Traditionalism supports them.</li>
+            </ul>
+          </div>
+          <img
+            class="scale-side-icon"
+            src="../assets/traditional.png"
+            alt="Traditionalism"
+          />
+        </div>
+
+        <div class="scale-row">
+          <img
+            class="scale-side-icon"
+            src="../assets/open-borders.png"
+            alt="Open Borders"
+          />
+          <div class="term-card">
+            <h3>Open Borders vs Closed Borders</h3>
+            <ul class="term-poles">
+              <li>Open borders view immigration as beneficial.</li>
+
+              <li>Closed borders view it as harmful.</li>
+            </ul>
+          </div>
+          <img
+            class="scale-side-icon"
+            src="../assets/closed-borders.png"
+            alt="Closed Borders"
+          />
+        </div>
+
+        <div class="scale-row">
+          <img
+            class="scale-side-icon"
+            src="../assets/liberty.png"
+            alt="Liberty"
+          />
+          <div class="term-card">
+            <h3>Liberty vs Morality</h3>
+            <ul class="term-poles">
+              <li>
+                Liberty considers so-called &#39;degenerate&#39; behavior a
+                personal right.
+              </li>
+
+              <li>Morality views it as harmful and in need of correction.</li>
+            </ul>
+          </div>
+          <img
+            class="scale-side-icon"
+            src="../assets/morality.png"
+            alt="Morality"
+          />
+        </div>
+
+        <div class="scale-row">
+          <img
+            class="scale-side-icon"
+            src="../assets/pro-lgbtqia+.png"
+            alt="Pro-LGBTQIA+"
+          />
+          <div class="term-card">
+            <h3>Pro-LGBTQIA+ vs Anti-LGBTQIA+</h3>
+            <ul class="term-poles">
+              <li>
+                Pro-LGBTQIA+ supports the community and advocates for greater
+                acceptance.
+              </li>
+
+              <li>Anti-LGBTQIA+ opposes it.</li>
+            </ul>
+          </div>
+          <img
+            class="scale-side-icon"
+            src="../assets/anti-lgbtqia+.png"
+            alt="Anti-LGBTQIA+"
+          />
+        </div>
+
+        <div class="scale-row">
+          <img
+            class="scale-side-icon"
+            src="../assets/critic.png"
+            alt="Critical"
+          />
+          <div class="term-card">
+            <h3>Critical vs Loyal</h3>
+            <ul class="term-poles">
+              <li>
+                Critical views the nation as deeply flawed and supports teaching
+                those flaws in schools.
+              </li>
+
+              <li>
+                Loyal views the nation as great and supports teaching that
+                greatness in schools.
+              </li>
+            </ul>
+          </div>
+          <img
+            class="scale-side-icon"
+            src="../assets/loyalist.png"
+            alt="Loyal"
+          />
+        </div>
+
+        <div class="scale-row">
+          <img
+            class="scale-side-icon"
+            src="../assets/centralism.png"
+            alt="Centralism"
+          />
+          <div class="term-card">
+            <h3>Centralism vs Confederalism</h3>
+            <ul class="term-poles">
+              <li>Centralism favors governance by the federal government.</li>
+
+              <li>
+                Confederalism favors greater authority for state governments.
+              </li>
+            </ul>
+          </div>
+          <img
+            class="scale-side-icon"
+            src="../assets/confederalism.png"
+            alt="Confederalism"
+          />
+        </div>
+
+        <div class="scale-row">
+          <img
+            class="scale-side-icon"
+            src="../assets/humanitarianism.png"
+            alt="Humanitarianism"
+          />
+          <div class="term-card">
+            <h3>Humanitarianism vs Productivism</h3>
+            <ul class="term-poles">
+              <li>Humanitarianism emphasizes promoting human rights abroad.</li>
+
+              <li>Productivism prioritizes economic interests.</li>
+            </ul>
+          </div>
+          <img
+            class="scale-side-icon"
+            src="../assets/productivism.png"
+            alt="Productivism"
+          />
+        </div>
+
+        <div class="scale-row">
+          <img
+            class="scale-side-icon"
+            src="../assets/militarism.png"
+            alt="Militarism"
+          />
+          <div class="term-card">
+            <h3>Militarism vs Pacifism</h3>
+            <ul class="term-poles">
+              <li>
+                Militarism supports maintaining a strong military and using it
+                when necessary.
+              </li>
+
+              <li>Pacifism advocates reducing or avoiding military action.</li>
+            </ul>
+          </div>
+          <img
+            class="scale-side-icon"
+            src="../assets/pacifism.png"
+            alt="Pacifism"
+          />
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>What are the stances?</h2>
+
+        <div class="term-card">
+          <h3>Reactionary</h3>
+          <p>
+            Extremely right-wing. Seeks to undo major social, economic, or
+            cultural changes and restore an older order.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Conservative</h3>
+          <p>
+            Strongly right-wing. Defends tradition and opposes further change.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Center-Right</h3>
+          <p>
+            Moderately right-wing. Leans on tradition but accepts gradual
+            reform.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Moderate</h3>
+          <p>Centrist. Balances reform with continuity.</p>
+        </div>
+
+        <div class="term-card">
+          <h3>Center-Left</h3>
+          <p>
+            Moderately left-wing. Supports reform but stops short of breaking
+            established institutions and traditions.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Liberal</h3>
+          <p>Strongly left-wing. Seeks broad reforms to reshape society.</p>
+        </div>
+
+        <div class="term-card">
+          <h3>Progressive</h3>
+          <p>
+            Extremely left-wing. Calls for deep reform of the current order.
+          </p>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2>What are the ideologies?</h2>
+
+        <div class="term-card">
+          <h3>Traditionalist Conservatism</h3>
+          <p>
+            Endorses an active government that promotes economic and social
+            conservatism as well as national interests abroad.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Paleoconservatism</h3>
+          <p>
+            Favors an active government that advances economic and social
+            conservatism while preferring limited foreign intervention.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Neoconservatism</h3>
+          <p>
+            Supports a limited federal government domestically while advocating
+            moderate economic and social conservatism, combined with active,
+            strong foreign intervention to promote national interests.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Mesoconservatism</h3>
+          <p>
+            Advocates for strong economic and social conservatism along with
+            active, strong intervention abroad to advance national interests.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Right-Libertarianism</h3>
+          <p>
+            Backs a limited federal government at home while favoring moderate
+            economic and social conservatism, alongside limited foreign
+            intervention.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Paleolibertarianism</h3>
+          <p>
+            Favors a small federal government in domestic affairs while
+            supporting strong economic and social conservatism, alongside
+            limited intervention abroad.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Social Democracy</h3>
+          <p>
+            Favors a strong government to tackle social and economic
+            inequalities, with a foreign policy geared toward promoting human
+            rights through intervention.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Socialism</h3>
+          <p>
+            A strong government addresses the means of production, distributes
+            wealth equally, and seeks to eliminate societal hierarchies. Its
+            foreign policy is geared toward promoting human rights.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Modern Liberalism</h3>
+          <p>
+            Supports a strong government to address social and economic
+            inequalities, with a foreign policy geared toward advancing national
+            interests through intervention.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Left-Libertarianism</h3>
+          <p>
+            Favors a limited government but looks favorably on social and
+            economic changes meant to reduce inequality. Prefers a foreign
+            policy of limited intervention with a human rights focus.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Libertarian Socialism</h3>
+          <p>
+            Rejects both capitalism and government, seeking a socialist economy
+            with individualism as a core tenet.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>National Liberalism</h3>
+          <p>
+            Favors maintaining economic hierarchies while championing social
+            liberties and the rights of historically oppressed racial, gender,
+            and sexual minorities. Uses the government to address these issues
+            while limiting foreign intervention.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Neoliberalism</h3>
+          <p>
+            Preserves economic hierarchies while advocating social liberties and
+            the rights of historically oppressed racial, gender, and sexual
+            minorities. Uses the government to address these issues while
+            embracing foreign intervention.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Neolibertarianism</h3>
+          <p>
+            Accepts existing economic hierarchies while supporting social
+            liberties and the rights of historically oppressed racial, gender,
+            and sexual minorities. Favors a limited government at home and an
+            active one abroad.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Neoclassical Liberalism</h3>
+          <p>
+            Upholds economic hierarchies while advocating social liberties and
+            the rights of historically oppressed racial, gender, and sexual
+            minorities. Favors a limited government.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Paternalistic Conservatism</h3>
+          <p>
+            Pairs social conservatism with a strong central government that
+            uplifts economically struggling individuals.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Conservative Socialism</h3>
+          <p>
+            Combines a socialist economic system with conservative social
+            policies.
+          </p>
+        </div>
+
+        <div class="term-card">
+          <h3>Conservative Populism</h3>
+          <p>
+            Favors social conservatism while voicing hostility toward economic
+            classes, and remains skeptical of a strong government.
+          </p>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
