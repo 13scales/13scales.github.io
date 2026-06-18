@@ -476,6 +476,11 @@
 
       const coordinates = {};
 
+      // Small screens (results breakpoint = 600px) hide thin slivers sooner
+      const pctThreshold = window.matchMedia("(max-width: 600px)").matches
+        ? 33
+        : 7;
+
       for (const [category, axes] of Object.entries(scaleOrder)) {
         let hSum = 0,
           hCount = 0,
@@ -515,11 +520,11 @@
           const pctRight = result.querySelector(".pct-right");
           if (pctLeft) {
             pctLeft.textContent = first + "%";
-            pctLeft.style.display = first >= 7 ? "" : "none";
+            pctLeft.style.display = first >= pctThreshold ? "" : "none";
           }
           if (pctRight) {
             pctRight.textContent = second + "%";
-            pctRight.style.display = second >= 7 ? "" : "none";
+            pctRight.style.display = second >= pctThreshold ? "" : "none";
           }
 
           if (dimension === 0) {
@@ -644,14 +649,24 @@
           2) *
         100;
 
-      let stance;
-      if (horizontalCumulative >= 85) stance = "Reactionary";
-      else if (horizontalCumulative >= 70) stance = "Conservative";
-      else if (horizontalCumulative >= 55) stance = "Center-Right";
-      else if (horizontalCumulative >= 45) stance = "Moderate";
-      else if (horizontalCumulative >= 30) stance = "Center-Left";
-      else if (horizontalCumulative >= 15) stance = "Liberal";
-      else stance = "Progressive";
+      const rightPct = Math.round(horizontalCumulative);
+
+      let stance, lean;
+      if (rightPct > 50) {
+        lean = `${rightPct}% right`;
+        if (rightPct >= 85) stance = "Reactionary";
+        else if (rightPct >= 70) stance = "Conservative";
+        else stance = "Center-Right";
+      } else if (rightPct < 50) {
+        const leftPct = 100 - rightPct;
+        lean = `${leftPct}% left`;
+        if (leftPct >= 85) stance = "Progressive";
+        else if (leftPct >= 70) stance = "Liberal";
+        else stance = "Center-Left";
+      } else {
+        stance = "Moderate";
+        lean = "50%";
+      }
 
       // Stance/score overrides that split a base ideology into a variant.
       const consReac = stance === "Conservative" || stance === "Reactionary";
@@ -670,7 +685,7 @@
         finalIdeology = "Conservative Socialism";
 
       document.querySelector(".results-title").textContent =
-        `You are ${stance} and support ${finalIdeology}.`;
+        `You are ${stance} (${lean}) and support ${finalIdeology}.`;
 
       document.documentElement.classList.add("results-ready");
     </script>
