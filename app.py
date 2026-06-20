@@ -1,7 +1,7 @@
 import json
 import random
 from collections import defaultdict
-from flask import Flask, render_template, request, send_from_directory
+from flask import Flask, Response, render_template, request, send_from_directory
 
 app = Flask(__name__)
 app.jinja_env.policies["json.dumps_kwargs"] = {"sort_keys": False}
@@ -122,6 +122,19 @@ def results():
         planes=coordinates,
         scale_order=scale_order,
     )
+
+
+@app.route("/sitemap.xml")
+def sitemap():
+    base = "https://13scales.github.io"
+    pages = ["/", "/info/", "/quiz/"]
+    urls = "".join(f"<url><loc>{base}{page}</loc></url>" for page in pages)
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+        f"{urls}</urlset>"
+    )
+    return Response(xml, mimetype="application/xml")
 
 
 if __name__ == "__main__":
